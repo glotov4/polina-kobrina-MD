@@ -510,6 +510,57 @@ section { padding: 7rem 2.5rem; }
   background: rgba(232,104,48,0.08);
 }
 
+/* ========= CV / LOOKING FOR ========= */
+#cv {
+  background: var(--bg-warm);
+}
+.cv-intro {
+  color: var(--brown-mid); font-size: 0.95rem;
+  line-height: 1.8; max-width: 640px; margin-bottom: 3rem;
+}
+.cv-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.cv-card {
+  background: var(--white);
+  border: 1px solid rgba(184,133,122,0.12);
+  border-radius: 10px;
+  padding: 2rem 1.8rem;
+  display: flex; flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.cv-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(90deg, var(--orange), var(--terracotta));
+}
+.cv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(184,133,122,0.12);
+}
+.cv-card h3 {
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  color: var(--brown-dark); margin-bottom: 0.5rem;
+}
+.cv-card p {
+  font-size: 0.88rem; color: var(--brown-mid);
+  line-height: 1.7; margin-bottom: 1.4rem; flex: 1;
+}
+.cv-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--orange); text-decoration: none;
+  transition: color 0.2s, gap 0.2s;
+}
+.cv-link:hover { color: var(--terracotta-deep); gap: 0.6rem; }
+@media (max-width: 960px) {
+  .cv-grid { grid-template-columns: 1fr; }
+}
+
 /* ========= FOOTER ========= */
 footer {
   text-align: center; padding: 2rem;
@@ -558,9 +609,8 @@ footer {
     margin-right: auto;
     padding: 6rem 4rem;
   }
-  .hero-photos {
-    overflow: hidden;
-  }
+  .hero-photos { min-height: 0; }
+  .hero-img-wrap { position: absolute; inset: 0; }
   .hero h1 { font-size: clamp(3.2rem, 3.2vw, 5rem); }
   .hero-sub { font-size: 1.2rem; line-height: 1.8; }
   .hero-cta { font-size: 1rem; padding: 1.1rem 2.6rem; }
@@ -890,6 +940,32 @@ footer {
   </div>
 </section>
 
+<!-- CV / LOOKING FOR -->
+<section id="cv">
+  <div class="container">
+    <p class="section-label reveal">Resumes</p>
+    <h2 class="section-title reveal">What I&rsquo;m <em>looking for</em></h2>
+    <p class="cv-intro reveal reveal-delay-1">I&rsquo;m open to roles that sit at the intersection of medicine, communication, and technology. Below are tailored CVs for the directions I&rsquo;m most excited about.</p>
+    <div class="cv-grid stagger-parent reveal">
+      <div class="cv-card stagger-child">
+        <h3>Medical Writer</h3>
+        <p>Evidence-based content, regulatory writing, patient education materials. Turning clinical data into something humans want to read.</p>
+        <a href="#" class="cv-link" target="_blank">View CV &rarr;</a>
+      </div>
+      <div class="cv-card stagger-child">
+        <h3>Health-Tech &amp; R&amp;D</h3>
+        <p>Clinical product input, health data analysis, prosthetics research. Where medicine meets engineering and product thinking.</p>
+        <a href="#" class="cv-link" target="_blank">View CV &rarr;</a>
+      </div>
+      <div class="cv-card stagger-child">
+        <h3>Clinical &amp; Rehabilitation</h3>
+        <p>Internal medicine, gastroenterology, rehab. Direct patient care with an evidence-first approach and multilingual capability.</p>
+        <a href="#" class="cv-link" target="_blank">View CV &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -897,9 +973,10 @@ footer {
     <h2 class="section-title reveal">I&rsquo;m looking for <em>my next thing</em></h2>
     <p class="contact-desc reveal reveal-delay-1">Specifically: remote-friendly roles in health R&amp;D, medical writing, health-tech, or health communication. I&rsquo;m open to relocation across the EU, US, or Asia. If what I do sounds useful to you, reach out&thinsp;&mdash;&thinsp;I&rsquo;d love to hear what you&rsquo;re working on.</p>
     <div class="contact-links reveal reveal-delay-2">
-      <a href="https://t.me/p_kobra_med" target="_blank" class="contact-link">&#9993;&ensp;Telegram</a>
+      <a href="mailto:mdneoo@gmail.com" class="contact-link">&#9993;&ensp;mdneoo@gmail.com</a>
+      <a href="https://t.me/p_kobrrra" target="_blank" class="contact-link">&#9993;&ensp;Telegram @p_kobrrra</a>
+      <a href="https://t.me/p_kobra_med" target="_blank" class="contact-link">&#9993;&ensp;Medical Blog</a>
       <a href="https://www.instagram.com/dr_p_kobra/" target="_blank" class="contact-link">&#10070;&ensp;Instagram</a>
-      <a href="mailto:[email@email.com]" class="contact-link">&#9993;&ensp;Email</a>
     </div>
   </div>
 </section>
