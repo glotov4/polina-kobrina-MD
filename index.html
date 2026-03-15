@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polina Kobrina — Physician, Writer, Human</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #FEF9F6;
+  --bg-warm: #F5EBE4;
+  --bg-rose: #EADDD7;
+  --terracotta: #B8857A;
+  --terracotta-deep: #9A6B60;
+  --pink: #E8A0B0;
+  --pink-soft: #F2CDD5;
+  --pink-pale: #FDF0F3;
+  --orange: #E86830;
+  --orange-warm: #F07A42;
+  --brown-dark: #2C1810;
+  --brown-mid: #5C4438;
+  --brown-light: #8A7468;
+  --cream: #FFF8F2;
+  --white: #FFFFFF;
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'Libre Franklin', -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--brown-dark);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ========= NAV ========= */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 2.5rem;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(254,249,246,0.92);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(184,133,122,0.15);
+}
+nav .inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  height: 64px;
+}
+nav .logo {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+  color: var(--brown-dark); text-decoration: none; letter-spacing: -0.01em;
+}
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a {
+  text-decoration: none; color: var(--brown-light); font-size: 0.78rem;
+  font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: color 0.25s;
+}
+nav a:hover { color: var(--orange); }
+
+/* ========= HERO ========= */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-warm);
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 80% 80% at 30% 80%, rgba(232,160,176,0.08), transparent);
+  pointer-events: none;
+}
+.hero-text {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 4rem 4rem 4rem max(3rem, 6vw);
+  max-width: 680px;
+  position: relative; z-index: 2;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 2rem;
+}
+.hero-tag::before {
+  content: ''; display: block; width: 28px; height: 2px;
+  background: var(--orange);
+}
+.hero h1 {
+  font-family: var(--display); font-weight: 300;
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  line-height: 1.15; color: var(--brown-dark);
+  margin-bottom: 1.8rem; letter-spacing: -0.02em;
+}
+.hero h1 em {
+  font-weight: 600; font-style: italic;
+  color: var(--terracotta-deep);
+}
+.hero-sub {
+  font-size: 1.05rem; color: var(--brown-mid);
+  line-height: 1.75; margin-bottom: 2.5rem;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--body);
+  background: var(--orange); color: var(--white);
+  text-decoration: none;
+  padding: 0.85rem 2rem; border-radius: 4px;
+  font-weight: 600; font-size: 0.85rem; letter-spacing: 0.03em;
+  transition: transform 0.25s, background 0.25s;
+  width: fit-content;
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  background: var(--orange-warm);
+}
+.hero-photos {
+  position: relative;
+}
+.hero-img-wrap {
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+.hero-img-main {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+/* floating accent photo */
+.hero-float {
+  position: absolute;
+  bottom: 3rem; left: -2rem;
+  width: 200px; height: 260px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(44,24,16,0.2);
+  border: 4px solid var(--cream);
+  transform: rotate(-3deg);
+  z-index: 3;
+}
+.hero-float img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ========= SECTIONS ========= */
+section { padding: 7rem 2.5rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-label::before {
+  content: ''; display: block; width: 20px; height: 2px;
+  background: var(--orange);
+}
+.section-title {
+  font-family: var(--display); font-weight: 300;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.2; margin-bottom: 1.5rem;
+  color: var(--brown-dark); letter-spacing: -0.02em;
+}
+.section-title em {
+  font-weight: 600; font-style: italic; color: var(--terracotta-deep);
+}
+
+/* ========= ABOUT ========= */
+#about { background: var(--bg); }
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: start;
+}
+.about-text p {
+  color: var(--brown-mid); font-size: 0.95rem;
+  margin-bottom: 1.2rem; line-height: 1.8;
+}
+.stats-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-top: 2.5rem;
+}
+.stat {
+  background: var(--white);
+  border: 1px solid rgba(184,133,122,0.15);
+  border-radius: 8px; padding: 1.4rem 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(184,133,122,0.12);
+}
+.stat-num {
+  font-family: var(--display); font-size: 2rem; font-weight: 600;
+  color: var(--orange); line-height: 1;
+}
+.stat-label {
+  font-size: 0.76rem; color: var(--brown-light);
+  margin-top: 0.4rem; line-height: 1.45;
+}
+
+/* about photo column */
+.about-photos {
+  position: relative;
+}
+.about-img-main {
+  width: 100%; border-radius: 8px;
+  box-shadow: 0 24px 64px rgba(44,24,16,0.12);
+}
+.about-img-small {
+  position: absolute;
+  bottom: -2rem; left: -2.5rem;
+  width: 180px; border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(44,24,16,0.18);
+  border: 4px solid var(--bg);
+  transform: rotate(2deg);
+}
+
+/* ========= WHAT I DO ========= */
+#what-i-do {
+  background: var(--brown-dark);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+#what-i-do::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 40%; height: 100%;
+  background: radial-gradient(ellipse at 80% 50%, rgba(232,104,48,0.06), transparent);
+  pointer-events: none;
+}
+#what-i-do .section-label { color: var(--orange-warm); }
+#what-i-do .section-label::before { background: var(--orange-warm); }
+#what-i-do .section-title { color: var(--cream); }
+#what-i-do .section-title em { color: var(--pink); }
+
+.skills-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem; margin-top: 3rem;
+}
+.skill-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 2.2rem 1.8rem;
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(232,104,48,0.3);
+}
+.skill-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(232,104,48,0.12);
+  color: var(--orange-warm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 1.2rem;
+}
+.skill-card h3 {
+  font-family: var(--display); font-size: 1.12rem; font-weight: 600;
+  margin-bottom: 0.7rem; color: var(--cream);
+}
+.skill-card p {
+  font-size: 0.88rem; color: rgba(255,248,242,0.6);
+  line-height: 1.7;
+}
+.skill-tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem;
+}
+.skill-tags span {
+  font-size: 0.66rem; font-weight: 500;
+  color: var(--orange-warm);
+  background: rgba(232,104,48,0.1);
+  padding: 0.2rem 0.6rem; border-radius: 100px;
+  letter-spacing: 0.02em;
+}
+
+/* ========= PHILOSOPHY ========= */
+#philosophy {
+  background: var(--bg);
+  position: relative;
+}
+.philosophy-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.philosophy-cards {
+  display: flex; flex-direction: column; gap: 1.6rem;
+}
+.phil-card {
+  background: var(--white);
+  border-left: 3px solid var(--terracotta);
+  border-radius: 0 8px 8px 0;
+  padding: 1.8rem 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.phil-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 30px rgba(184,133,122,0.1);
+}
+.phil-card h3 {
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  color: var(--brown-dark); margin-bottom: 0.5rem;
+}
+.phil-card p {
+  font-size: 0.9rem; color: var(--brown-mid); line-height: 1.7;
+}
+.philosophy-visual {
+  position: relative;
+}
+.philosophy-img-main {
+  width: 100%; border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(44,24,16,0.15);
+}
+.philosophy-img-or {
+  position: absolute;
+  top: -1.5rem; right: -1.5rem;
+  width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(44,24,16,0.2);
+  border: 4px solid var(--bg);
+  transform: rotate(2deg);
+}
+.or-caption {
+  position: absolute;
+  top: -1.5rem; right: -1.5rem;
+  transform: translate(0, -100%);
+  font-size: 0.68rem; font-weight: 500;
+  color: var(--brown-light); font-style: italic;
+  padding-bottom: 0.3rem;
+}
+
+/* ========= EXPERIENCE ========= */
+#experience {
+  background: var(--bg-warm);
+}
+.timeline { margin-top: 3rem; }
+.tl-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(184,133,122,0.15);
+  transition: background 0.3s;
+}
+.tl-item:first-child { padding-top: 0; }
+.tl-item:last-child { border-bottom: none; }
+.tl-meta {
+  text-align: right; padding-top: 0.2rem;
+}
+.tl-period {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 0.2rem;
+}
+.tl-sub {
+  font-size: 0.8rem; color: var(--brown-light); line-height: 1.5;
+}
+.tl-content {}
+.tl-title {
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  color: var(--brown-dark); margin-bottom: 0.4rem; line-height: 1.3;
+}
+.tl-desc {
+  font-size: 0.88rem; color: var(--brown-mid); line-height: 1.7;
+}
+
+/* ========= PHOTO STRIP ========= */
+.photo-strip {
+  padding: 0;
+  overflow: hidden;
+  background: var(--brown-dark);
+}
+.strip-inner {
+  display: flex;
+  gap: 0.5rem;
+  animation: slide 30s linear infinite;
+}
+.strip-inner img {
+  height: 320px; width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(10%) contrast(1.02);
+}
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========= CONTENT / BLOG ========= */
+#content { background: var(--bg); }
+.content-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; margin-top: 2.5rem;
+}
+.content-card {
+  background: var(--white);
+  border: 1px solid rgba(184,133,122,0.12);
+  border-radius: 10px; padding: 2.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; overflow: hidden;
+}
+.content-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--orange), var(--pink));
+}
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(184,133,122,0.12);
+}
+.cc-platform {
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 0.6rem;
+}
+.content-card h3 {
+  font-family: var(--display); font-size: 1.15rem; font-weight: 600;
+  margin-bottom: 0.6rem; color: var(--brown-dark);
+}
+.content-card p {
+  font-size: 0.88rem; color: var(--brown-mid); line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+.cc-links { display: flex; gap: 1rem; }
+.cc-links a {
+  font-size: 0.82rem; font-weight: 600; color: var(--orange);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;
+  transition: color 0.2s;
+}
+.cc-links a:hover { color: var(--terracotta-deep); }
+
+/* ========= CONTACT ========= */
+#contact {
+  background: var(--brown-dark);
+  color: var(--cream);
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+#contact::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(232,104,48,0.08), transparent),
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(232,160,176,0.05), transparent);
+  pointer-events: none;
+}
+#contact .section-label { justify-content: center; color: var(--orange-warm); }
+#contact .section-label::before { background: var(--orange-warm); }
+#contact .section-title { color: var(--cream); max-width: 500px; margin: 0 auto 1rem; }
+#contact .section-title em { color: var(--pink); }
+#contact .contact-desc {
+  color: rgba(255,248,242,0.65); max-width: 520px;
+  margin: 0 auto 2.5rem; font-size: 0.95rem; line-height: 1.75;
+}
+.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.contact-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  text-decoration: none; color: var(--cream);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.75rem 1.5rem; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 500;
+  transition: border-color 0.25s, transform 0.25s, background 0.25s;
+}
+.contact-link:hover {
+  border-color: var(--orange);
+  transform: translateY(-2px);
+  background: rgba(232,104,48,0.08);
+}
+
+/* ========= FOOTER ========= */
+footer {
+  text-align: center; padding: 2rem;
+  font-size: 0.72rem; color: var(--brown-light);
+  background: var(--bg);
+  border-top: 1px solid rgba(184,133,122,0.1);
+}
+
+/* ========= ANIMATIONS ========= */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* stagger children */
+.stagger-parent.visible .stagger-child {
+  opacity: 1; transform: translateY(0);
+}
+.stagger-child {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stagger-child:nth-child(1) { transition-delay: 0.05s; }
+.stagger-child:nth-child(2) { transition-delay: 0.15s; }
+.stagger-child:nth-child(3) { transition-delay: 0.25s; }
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-text { padding: 8rem 2rem 3rem; max-width: 100%; }
+  .hero-photos { width: 100%; height: 60vw; max-height: 500px; }
+  .hero-float { display: none; }
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-photos { order: -1; }
+  .about-img-small { display: none; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .philosophy-layout { grid-template-columns: 1fr; }
+  .philosophy-visual { order: -1; }
+  .philosophy-img-or { width: 140px; right: -0.5rem; top: -0.5rem; }
+  .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  .tl-meta { text-align: left; }
+  .content-grid { grid-template-columns: 1fr; }
+  nav ul { gap: 1rem; }
+  nav a { font-size: 0.68rem; }
+  section { padding: 4.5rem 1.5rem; }
+  .strip-inner img { height: 220px; }
+}
+
+@media (max-width: 600px) {
+  .hero-text { padding: 6rem 1.2rem 2rem; }
+  .hero h1 { font-size: 2rem; }
+  .stats-row { grid-template-columns: 1fr; }
+  nav .inner { height: 52px; }
+  nav .logo { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="inner">
+    <a href="#" class="logo">Polina Kobrina</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#what-i-do">What I Do</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#content">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-tag">Open to Opportunities &middot; Remote / Relocation</span>
+    <h1>I&rsquo;m a doctor who <em>actually explains things</em></h1>
+    <p class="hero-sub">Physician, medical writer, and the person behind a 2,200-subscriber evidence-based health blog. I take complex medical topics and turn them into something you&rsquo;d actually want to read&thinsp;&mdash;&thinsp;without cutting corners on the science.</p>
+    <a href="#contact" class="hero-cta">Get in Touch &rarr;</a>
+  </div>
+  <div class="hero-photos">
+    <div class="hero-img-wrap">
+      <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="Polina in a white lab coat, smiling" class="hero-img-main">
+    </div>
+    <div class="hero-float">
+      <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="Polina in pink scrubs, relaxed and approachable">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-layout">
+    <div class="about-text reveal">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Doctor first.<br>Everything else <em>grew from there.</em></h2>
+      <p>I graduated from First Pavlov State Medical University in Saint Petersburg, did my residency in internal medicine and gastroenterology, and worked in both emergency admissions and private practice. My degree is homologated in Spain, so I can practice across the EU.</p>
+      <p>Somewhere along the way I also ran a family retail business (&#8381;10M annual turnover, 1,500&thinsp;m&sup2; of commercial property, hiring, pricing, the whole thing), did independent R&amp;D on thermoplastic prosthetics&thinsp;&mdash;&thinsp;from literature review to sourcing manufacturing in China&thinsp;&mdash;&thinsp;and started writing about medicine online because I couldn&rsquo;t stop seeing the same myths everywhere.</p>
+      <p>I speak three languages (Russian, Spanish, English), have lived in 6+ countries across 4 continents, and I&rsquo;m more comfortable explaining how your gut works than writing an &ldquo;about me&rdquo; section.</p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Years in clinical practice &amp; research</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Languages<br>(RU &middot; ES &middot; EN)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2.2K</div>
+          <div class="stat-label">People who read my medical blog (and ask good questions)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Countries lived in across 4&nbsp;continents</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-photos reveal reveal-delay-2">
+      <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="Polina sitting casually in pink, smiling warmly" class="about-img-main">
+      <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="Polina in casual setting" class="about-img-small">
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="what-i-do">
+  <div class="container">
+    <p class="section-label reveal">What I Do</p>
+    <h2 class="section-title reveal">The <em>short version</em></h2>
+    <div class="skills-grid stagger-parent reveal">
+      <div class="skill-card stagger-child">
+        <div class="skill-icon">&oplus;</div>
+        <h3>Clinical Medicine &amp; Research</h3>
+        <p>Internal medicine, gastro, rehabilitation&thinsp;&mdash;&thinsp;I&rsquo;ve done the rounds, the night shifts, and the complicated inpatient cases. I read studies for fun (yes, really) and can translate them into something a non-doctor would understand.</p>
+        <div class="skill-tags">
+          <span>Internal Medicine</span><span>Gastro</span><span>Rehab</span><span>Neuro-Ortho</span><span>R&amp;D</span><span>SQL</span>
+        </div>
+      </div>
+      <div class="skill-card stagger-child">
+        <div class="skill-icon">&sung;</div>
+        <h3>Medical Writing &amp; Education</h3>
+        <p>I explain things like chronic pancreatitis, vaccination schedules, and why magnesium baths probably won&rsquo;t save you&thinsp;&mdash;&thinsp;and people come back for more. 2,200+ followers grown organically, with zero paid ads and zero &ldquo;miracle cure&rdquo; clickbait.</p>
+        <div class="skill-tags">
+          <span>Medical Writing</span><span>Lectures</span><span>Blog</span><span>Reels</span><span>Telemedicine</span>
+        </div>
+      </div>
+      <div class="skill-card stagger-child">
+        <div class="skill-icon">&rtrif;</div>
+        <h3>Business &amp; Operations</h3>
+        <p>Plot twist: I also ran a construction materials business for 2+ years. Hiring, firing, pricing, inventory, vendor negotiations in China. Not the most obvious path for a doctor, but it taught me how to manage things that don&rsquo;t come with a textbook.</p>
+        <div class="skill-tags">
+          <span>Management</span><span>Pricing</span><span>Supply Chain</span><span>Facility Ops</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="container">
+    <p class="section-label reveal">Philosophy</p>
+    <h2 class="section-title reveal">What I believe about <em>medicine and communication</em></h2>
+    <div class="philosophy-layout">
+      <div class="philosophy-cards stagger-parent reveal">
+        <div class="phil-card stagger-child">
+          <h3>Evidence over authority</h3>
+          <p>A claim doesn&rsquo;t become true because a doctor said it. It becomes true when the data supports it. I cite sources, flag study limitations, and say &ldquo;we don&rsquo;t know yet&rdquo; when that&rsquo;s the honest answer.</p>
+        </div>
+        <div class="phil-card stagger-child">
+          <h3>Clarity is kindness</h3>
+          <p>If a patient leaves my office confused, that&rsquo;s on me, not them. The same goes for writing. I spend 10 minutes explaining that tomatoes and bell peppers can be eaten together if that&rsquo;s what it takes to undo a myth.</p>
+        </div>
+        <div class="phil-card stagger-child">
+          <h3>Doctors are people too</h3>
+          <p>I&rsquo;ve been on antidepressants, I&rsquo;ve been scared before surgery, and I once skipped an entire ophthalmology module because cataract surgery footage was too much for me. Being open about this makes me a better doctor, not a worse one.</p>
+        </div>
+      </div>
+      <div class="philosophy-visual reveal reveal-delay-2">
+        <img src="assets/polina-photos/IMG_4232 копия_resized.jpg" alt="Polina with stethoscope in pink scrubs" class="philosophy-img-main">
+        <span class="or-caption">During med school clinical rotation &darr;</span>
+        <img src="assets/polina-photos/real photo from an operation room.jpg" alt="Polina in the operating room during a clinical rotation" class="philosophy-img-or">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip" aria-hidden="true">
+  <div class="strip-inner" id="photoStrip">
+    <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4250 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4405-2_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="">
+    <!-- duplicated for seamless loop -->
+    <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4250 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4405-2_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="">
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label reveal">Career Path</p>
+    <h2 class="section-title reveal">How I <em>got here</em></h2>
+    <div class="timeline stagger-parent reveal">
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Business &middot; 2+ years</div>
+          <div class="tl-sub">Construction materials<br>Russia</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Managing Director &mdash; Family Retail Enterprise</div>
+          <div class="tl-desc">Ran the whole operation: hiring, pricing, sales, inventory, promotions, staff motivation. &#8381;10M annual turnover. Also managed 1,500&thinsp;m&sup2; of leased commercial space&thinsp;&mdash;&thinsp;maintenance, renovations, tenant relations, the kind of work that has nothing to do with medicine but teaches you everything about people.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">R&amp;D &middot; Project</div>
+          <div class="tl-sub">Russia / China</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Independent Researcher &mdash; Thermoplastic Prosthetics</div>
+          <div class="tl-desc">Researched low-cost prosthetic technology from scratch: literature review, sourcing manufacturing in China, material experiments, prototype iterations. Nobody asked me to do this; I just thought it was important.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Clinical &middot; 9 mo</div>
+          <div class="tl-sub">Private Clinic<br>Saint Petersburg</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Internist &mdash; Therapist &amp; Rehabilitologist</div>
+          <div class="tl-desc">Outpatient therapy, rehab consultations, individualized treatment programs, and telemedicine. This is where I learned to work with pregnant patients (and learned that being scared of them is normal for non-OB/GYN doctors).</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Clinical &middot; 6 mo</div>
+          <div class="tl-sub">Railways Hospital<br>Saint Petersburg</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Internist &mdash; Emergency Admissions</div>
+          <div class="tl-desc">Triage and acute admission management in a high-volume ER. Fast-paced, high-stakes, not a lot of time to second-guess yourself.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Residency &middot; 2 yrs</div>
+          <div class="tl-sub">Inpatient Ward<br>Saint Petersburg</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Medical Residency &mdash; Internal Medicine / Gastroenterology</div>
+          <div class="tl-desc">Full residency across therapy and gastroenterology. Complex inpatient cases, diagnostics, discharge planning. This is where I fell in love with gastro and started realizing how many people get told they have &ldquo;chronic pancreatitis&rdquo; when they really don&rsquo;t.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Education</div>
+          <div class="tl-sub">Pavlov University<br>Saint Petersburg</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">MD in Therapy &amp; Rehabilitation</div>
+          <div class="tl-desc">Degree homologated (recognized) in Spain. Additional training in gastroenterology, neuro-orthopedics, rehab team methodology, orthostatic hypotension, and data analytics (SQL, Google Sheets).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT / BLOG -->
+<section id="content">
+  <div class="container">
+    <p class="section-label reveal">Blog &amp; Public Speaking</p>
+    <h2 class="section-title reveal">Where I <em>explain things</em></h2>
+    <div class="content-grid stagger-parent reveal">
+      <div class="content-card stagger-child">
+        <div class="cc-platform">Telegram &middot; Instagram</div>
+        <h3>&laquo;&#1084;&#1077;&#1076;&#1087;&#1086;&#1087; &#1086;&#1090; &#1090;&#1077;&#1088;&#1072;&#1087;&#1077;&#1074;&#1090;&#1072;&raquo;</h3>
+        <p>My evidence-based medical blog in Russian. 2,200+ subscribers, zero ads, all organic. I write about back pain, vaccination, cholesterol, myths your nutritionist told you, and why you should probably get that blood test. I also share my own health journey&thinsp;&mdash;&thinsp;including the parts that aren&rsquo;t very glamorous.</p>
+        <div class="cc-links">
+          <a href="https://t.me/p_kobra_med" target="_blank">Telegram &rarr;</a>
+          <a href="https://www.instagram.com/dr_p_kobra/" target="_blank">Instagram &rarr;</a>
+        </div>
+      </div>
+      <div class="content-card stagger-child">
+        <div class="cc-platform">Lectures &amp; Workshops</div>
+        <h3>Teaching Coaches &amp; Med Students</h3>
+        <p>I give lectures on how to build training programs for athletes with chronic conditions, how to actually talk to patients, and how to integrate medical evidence into coaching without getting lost in jargon. If you train people with bodies (so&hellip; everyone), we should talk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label reveal">Let&rsquo;s Talk</p>
+    <h2 class="section-title reveal">I&rsquo;m looking for <em>my next thing</em></h2>
+    <p class="contact-desc reveal reveal-delay-1">Specifically: remote-friendly roles in health R&amp;D, medical writing, health-tech, or health communication. I&rsquo;m open to relocation across the EU, US, or Asia. If what I do sounds useful to you, reach out&thinsp;&mdash;&thinsp;I&rsquo;d love to hear what you&rsquo;re working on.</p>
+    <div class="contact-links reveal reveal-delay-2">
+      <a href="https://t.me/p_kobra_med" target="_blank" class="contact-link">&#9993;&ensp;Telegram</a>
+      <a href="https://www.instagram.com/dr_p_kobra/" target="_blank" class="contact-link">&#10070;&ensp;Instagram</a>
+      <a href="mailto:[email@email.com]" class="contact-link">&#9993;&ensp;Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Polina Kobrina. Built with care and evidence-based CSS.</p>
+</footer>
+
+<script>
+// Scroll-triggered animations
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// Nav background on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+</script>
+</body>
+</html>
