@@ -68,11 +68,27 @@ nav a {
 }
 nav a:hover { color: var(--orange); }
 
+/* ========= NAV TOGGLE (mobile) ========= */
+.nav-toggle {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: 4px;
+  z-index: 200;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px;
+  background: var(--brown-dark);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ========= HERO ========= */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  min-height: 100dvh;
   background: var(--bg-warm);
   position: relative;
   overflow: hidden;
@@ -83,15 +99,25 @@ nav a:hover { color: var(--orange); }
   background: radial-gradient(ellipse 80% 80% at 30% 80%, rgba(232,160,176,0.08), transparent);
   pointer-events: none;
 }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1800px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
 .hero-text {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 4rem 4rem 4rem max(3rem, 6vw);
-  max-width: 680px;
+  padding: 6rem clamp(2rem, 4vw, 5rem) 4rem clamp(2rem, 6vw, 5rem);
+  max-width: 720px;
+  margin-left: auto;
   position: relative; z-index: 2;
 }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+  font-size: clamp(0.68rem, 0.8vw, 0.85rem); font-weight: 600; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--orange);
   margin-bottom: 2rem;
 }
@@ -101,7 +127,7 @@ nav a:hover { color: var(--orange); }
 }
 .hero h1 {
   font-family: var(--display); font-weight: 300;
-  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-size: clamp(2.4rem, 3.5vw, 4.2rem);
   line-height: 1.15; color: var(--brown-dark);
   margin-bottom: 1.8rem; letter-spacing: -0.02em;
 }
@@ -110,7 +136,7 @@ nav a:hover { color: var(--orange); }
   color: var(--terracotta-deep);
 }
 .hero-sub {
-  font-size: 1.05rem; color: var(--brown-mid);
+  font-size: clamp(1rem, 1.1vw, 1.2rem); color: var(--brown-mid);
   line-height: 1.75; margin-bottom: 2.5rem;
 }
 .hero-cta {
@@ -119,7 +145,7 @@ nav a:hover { color: var(--orange); }
   background: var(--orange); color: var(--white);
   text-decoration: none;
   padding: 0.85rem 2rem; border-radius: 4px;
-  font-weight: 600; font-size: 0.85rem; letter-spacing: 0.03em;
+  font-weight: 600; font-size: clamp(0.85rem, 0.9vw, 1rem); letter-spacing: 0.03em;
   transition: transform 0.25s, background 0.25s;
   width: fit-content;
 }
@@ -142,7 +168,7 @@ nav a:hover { color: var(--orange); }
 .hero-float {
   position: absolute;
   bottom: 3rem; left: -2rem;
-  width: 200px; height: 260px;
+  width: clamp(160px, 14vw, 240px); height: clamp(210px, 18vw, 310px);
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(44,24,16,0.2);
@@ -515,9 +541,22 @@ footer {
 .stagger-child:nth-child(3) { transition-delay: 0.25s; }
 
 /* ========= RESPONSIVE ========= */
+
+/* Ultrawide */
+@media (min-width: 1800px) {
+  nav .inner { max-width: 1700px; }
+  .hero-text { max-width: 800px; }
+  .hero h1 { font-size: clamp(3.2rem, 3vw, 4.5rem); }
+  .hero-sub { font-size: 1.15rem; }
+  .hero-cta { font-size: 0.95rem; padding: 1rem 2.4rem; }
+  .hero-tag { font-size: 0.8rem; }
+}
+
+/* Tablet / small desktop */
 @media (max-width: 960px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-text { padding: 8rem 2rem 3rem; max-width: 100%; }
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; }
+  .hero { min-height: auto; }
+  .hero-text { padding: 8rem 2rem 3rem; max-width: 100%; margin-left: 0; }
   .hero-photos { width: 100%; height: 60vw; max-height: 500px; }
   .hero-float { display: none; }
   .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -530,15 +569,35 @@ footer {
   .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .tl-meta { text-align: left; }
   .content-grid { grid-template-columns: 1fr; }
-  nav ul { gap: 1rem; }
-  nav a { font-size: 0.68rem; }
   section { padding: 4.5rem 1.5rem; }
   .strip-inner img { height: 220px; }
+
+  /* Mobile nav */
+  .nav-toggle { display: flex; }
+  nav ul {
+    position: fixed; top: 0; right: 0;
+    width: 260px; height: 100vh; height: 100dvh;
+    flex-direction: column; gap: 0;
+    background: var(--bg);
+    padding: 5rem 2rem 2rem;
+    box-shadow: -4px 0 24px rgba(44,24,16,0.1);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    z-index: 150;
+  }
+  nav ul.open { transform: translateX(0); }
+  nav a {
+    font-size: 0.82rem;
+    display: block; padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(184,133,122,0.1);
+  }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .hero-text { padding: 6rem 1.2rem 2rem; }
   .hero h1 { font-size: 2rem; }
+  .hero-sub { font-size: 0.95rem; }
   .stats-row { grid-template-columns: 1fr; }
   nav .inner { height: 52px; }
   nav .logo { font-size: 1rem; }
@@ -551,7 +610,10 @@ footer {
 <nav id="nav">
   <div class="inner">
     <a href="#" class="logo">Polina Kobrina</a>
-    <ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#what-i-do">What I Do</a></li>
       <li><a href="#philosophy">Philosophy</a></li>
@@ -564,6 +626,7 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-inner">
   <div class="hero-text">
     <span class="hero-tag">Open to Opportunities &middot; Remote / Relocation</span>
     <h1>I&rsquo;m a doctor who <em>actually explains things</em></h1>
@@ -577,6 +640,7 @@ footer {
     <div class="hero-float">
       <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="Polina in pink scrubs, relaxed and approachable">
     </div>
+  </div>
   </div>
 </section>
 
@@ -705,52 +769,72 @@ footer {
     <div class="timeline stagger-parent reveal">
       <div class="tl-item stagger-child">
         <div class="tl-meta">
-          <div class="tl-period">Business &middot; 2+ years</div>
-          <div class="tl-sub">Construction materials<br>Russia</div>
+          <div class="tl-period">Education &middot; Sep 2025&ndash;Present</div>
+          <div class="tl-sub">Educational Platform<br>for Trainers</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Managing Director &mdash; Family Retail Enterprise</div>
-          <div class="tl-desc">Ran the whole operation: hiring, pricing, sales, inventory, promotions, staff motivation. &#8381;10M annual turnover. Also managed 1,500&thinsp;m&sup2; of leased commercial space&thinsp;&mdash;&thinsp;maintenance, renovations, tenant relations, the kind of work that has nothing to do with medicine but teaches you everything about people.</div>
+          <div class="tl-title">Lecturer &mdash; Medical Education for Coaches</div>
+          <div class="tl-desc">Teaching coaches and trainers how to integrate medical evidence into their practice&thinsp;&mdash;&thinsp;building training programs for athletes with chronic conditions, bridging the gap between clinical knowledge and real-world coaching.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
         <div class="tl-meta">
-          <div class="tl-period">R&amp;D &middot; Project</div>
-          <div class="tl-sub">Russia / China</div>
+          <div class="tl-period">Clinical &middot; Aug 2025&ndash;Mar 2026</div>
+          <div class="tl-sub">8 months</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Independent Researcher &mdash; Thermoplastic Prosthetics</div>
-          <div class="tl-desc">Researched low-cost prosthetic technology from scratch: literature review, sourcing manufacturing in China, material experiments, prototype iterations. Nobody asked me to do this; I just thought it was important.</div>
-        </div>
-      </div>
-      <div class="tl-item stagger-child">
-        <div class="tl-meta">
-          <div class="tl-period">Clinical &middot; 9 mo</div>
-          <div class="tl-sub">Private Clinic<br>Saint Petersburg</div>
-        </div>
-        <div class="tl-content">
-          <div class="tl-title">Internist &mdash; Therapist &amp; Rehabilitologist</div>
+          <div class="tl-title">Therapist &amp; Rehabilitologist</div>
           <div class="tl-desc">Outpatient therapy, rehab consultations, individualized treatment programs, and telemedicine. This is where I learned to work with pregnant patients (and learned that being scared of them is normal for non-OB/GYN doctors).</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
         <div class="tl-meta">
-          <div class="tl-period">Clinical &middot; 6 mo</div>
-          <div class="tl-sub">Railways Hospital<br>Saint Petersburg</div>
+          <div class="tl-period">Retraining &middot; Sep 2024&ndash;May 2025</div>
+          <div class="tl-sub">Paediatric Rehabilitation</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Internist &mdash; Emergency Admissions</div>
+          <div class="tl-title">Professional Retraining &mdash; Rehabilitation Medicine</div>
+          <div class="tl-desc">Specialized retraining at a clinic working with children with cerebral palsy and post-oncology rehabilitation. A completely different kind of medicine&thinsp;&mdash;&thinsp;slower, more patient, and deeply rewarding.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Residency &middot; Sep 2021&ndash;Jun 2024</div>
+          <div class="tl-sub">Internal Medicine<br>Saint Petersburg</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Medical Residency &mdash; Internal Medicine (Therapy)</div>
+          <div class="tl-desc">Full residency in therapy. Complex inpatient cases, diagnostics, discharge planning. Included a year-long academic leave (Nov 2022&ndash;Nov 2023) traveling through Argentina, Chile, Brazil, Indonesia, and Turkey&thinsp;&mdash;&thinsp;because sometimes stepping away is part of learning.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Clinical &middot; Nov 2021&ndash;Apr 2022</div>
+          <div class="tl-sub">Emergency Department<br>6 months</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Therapist &mdash; Emergency Admissions</div>
           <div class="tl-desc">Triage and acute admission management in a high-volume ER. Fast-paced, high-stakes, not a lot of time to second-guess yourself.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
         <div class="tl-meta">
-          <div class="tl-period">Residency &middot; 2 yrs</div>
-          <div class="tl-sub">Inpatient Ward<br>Saint Petersburg</div>
+          <div class="tl-period">Business &middot; 2020&ndash;Present</div>
+          <div class="tl-sub">Family Business<br>Russia</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Medical Residency &mdash; Internal Medicine / Gastroenterology</div>
-          <div class="tl-desc">Full residency across therapy and gastroenterology. Complex inpatient cases, diagnostics, discharge planning. This is where I fell in love with gastro and started realizing how many people get told they have &ldquo;chronic pancreatitis&rdquo; when they really don&rsquo;t.</div>
+          <div class="tl-title">Operations Manager &mdash; Family Retail Enterprise</div>
+          <div class="tl-desc">Running the full operations of a family construction materials business in the background: ordering goods, hiring, payroll, pricing, and all the decisions that keep the thing going. My main focus was always medicine, but this taught me everything about managing people and processes.</div>
+        </div>
+      </div>
+      <div class="tl-item stagger-child">
+        <div class="tl-meta">
+          <div class="tl-period">Clinical &middot; Feb&ndash;Jul 2018</div>
+          <div class="tl-sub">Urology Department</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Nurse &mdash; Urology Ward</div>
+          <div class="tl-desc">Took a job as a nurse alongside medical school to get hands-on experience with real patients. The kind of practical education you can&rsquo;t get from a textbook.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -827,6 +911,20 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
+
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
