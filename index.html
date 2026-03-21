@@ -415,7 +415,7 @@ section { padding: 7rem 2.5rem; }
 .strip-inner {
   display: flex;
   gap: 0.5rem;
-  animation: slide 30s linear infinite;
+  animation: slide 40s linear infinite;
 }
 .strip-inner img {
   height: 320px; width: auto;
@@ -563,6 +563,70 @@ footer {
   border-top: 1px solid rgba(184,133,122,0.1);
 }
 
+/* ========= R&D SHOWCASE ========= */
+.rnd-showcase {
+  background: var(--bg);
+}
+.rnd-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.rnd-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.rnd-photos img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(44,24,16,0.12);
+}
+.rnd-photos .rnd-wide {
+  grid-column: 1 / -1;
+}
+.rnd-text h3 {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 0.8rem;
+}
+.rnd-text p {
+  font-size: 0.92rem;
+  color: var(--brown-mid);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+/* ========= VIDEO SECTION ========= */
+.teaching-video {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(44,24,16,0.12);
+  max-width: 360px;
+}
+.teaching-video video {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+.teaching-video-caption {
+  font-size: 0.78rem;
+  color: var(--brown-light);
+  font-style: italic;
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .rnd-layout { grid-template-columns: 1fr; }
+  .rnd-photos { order: -1; }
+  .teaching-video { max-width: 100%; }
+}
+
 /* ========= ANIMATIONS ========= */
 .reveal {
   opacity: 0; transform: translateY(30px);
@@ -626,7 +690,7 @@ footer {
   .philosophy-visual { order: -1; }
   .philosophy-img-or { width: 140px; right: -0.5rem; top: -0.5rem; }
   .or-caption { display: none; }
-  .strip-inner { animation-duration: 15s; }
+  .strip-inner { animation-duration: 20s; }
   .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .tl-meta { text-align: left; }
   .content-grid { grid-template-columns: 1fr; }
@@ -696,10 +760,10 @@ footer {
   </div>
   <div class="hero-photos">
     <div class="hero-img-wrap">
-      <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="Polina in a white lab coat, smiling" class="hero-img-main">
+      <img src="assets/polina-photos/IMG_4505 копия_resized.webp" alt="Polina in a white lab coat, smiling" class="hero-img-main">
     </div>
     <div class="hero-float">
-      <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="Polina in pink scrubs, relaxed and approachable">
+      <img src="assets/polina-photos/IMG_4223 копия_resized.webp" alt="Polina in pink scrubs, relaxed and approachable">
     </div>
   </div>
   </div>
@@ -711,9 +775,9 @@ footer {
     <div class="about-text reveal">
       <p class="section-label">About</p>
       <h2 class="section-title">Doctor first.<br>Everything else <em>grew from there.</em></h2>
-      <p>I graduated from First Pavlov State Medical University in Saint Petersburg, I completed my residency in Internal Medicine and additional professional training in Physical and Rehabilitation Medicine, and worked in both emergency admissions and private practice. My degree is homologated in Spain, so I can practice across the EU.</p>
-      <p>Somewhere along the way I also started half-time managing a family retail business (hiring, pricing, payroll, the whole thing), did independent R&amp;D on thermoplastic prosthetics&thinsp;&mdash;&thinsp;from literature review to sourcing materials from China and building a working prototype&thinsp;&mdash;&thinsp;and started writing about medicine online because I couldn&rsquo;t stop seeing the same myths everywhere.</p>
-      <p>I speak three languages (Russian, Spanish, English), have lived in 6+ countries across 4 continents, and I&rsquo;m more comfortable explaining how your gut works than writing an &ldquo;about me&rdquo; section.</p>
+      <p>I graduated from Pavlov First Saint Petersburg State Medical University, completed a two-year residency in internal medicine, and went on to professional retraining in physical and rehabilitation medicine. My clinical work spans hospital medicine, emergency admissions, outpatient care, women&rsquo;s health, and telemedicine. My medical degree is homologated (recognized) in Spain.</p>
+      <p>Beyond clinical work, I run an evidence-based medical blog with 2,200+ organic subscribers, completed an independent R&amp;D project&thinsp;&mdash;&thinsp;fabricating orthosis sheets from raw polycaprolactone granules, ~8x cheaper than imported alternatives, tested on real patients&thinsp;&mdash;&thinsp;and for the past six years I&rsquo;ve supported the operations of a family business, handling everything from supplier logistics to digital content.</p>
+      <p>I&rsquo;m interested in how medicine, communication, and technology intersect. I care about women&rsquo;s health, patient education, rehabilitation innovation, and making evidence accessible to people who need it.</p>
       <div class="stats-row">
         <div class="stat">
           <div class="stat-num">4+</div>
@@ -728,14 +792,14 @@ footer {
           <div class="stat-label">People who read my medical blog (and ask good questions)</div>
         </div>
         <div class="stat">
-          <div class="stat-num">6+</div>
-          <div class="stat-label">Countries lived in across 4&nbsp;continents</div>
+          <div class="stat-num">8x</div>
+          <div class="stat-label">Cheaper orthosis prototype vs&nbsp;imports</div>
         </div>
       </div>
     </div>
     <div class="about-photos reveal reveal-delay-2">
-      <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="Polina sitting casually in pink, smiling warmly" class="about-img-main">
-      <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="Polina in casual setting" class="about-img-small">
+      <img src="assets/polina-photos/IMG_4238 копия_resized.webp" alt="Polina sitting casually in pink, smiling warmly" class="about-img-main">
+      <img src="assets/polina-photos/IMG_4316 копия_resized.webp" alt="Polina in casual setting" class="about-img-small">
     </div>
   </div>
 </section>
@@ -749,25 +813,25 @@ footer {
       <div class="skill-card stagger-child">
         <div class="skill-icon">&oplus;</div>
         <h3>Clinical Medicine &amp; Research</h3>
-        <p>My background is in internal medicine, with additional training in rehabilitation and a strong clinical interest in gastroenterology. I&rsquo;ve worked with inpatient cases, night shifts, and complex patients. I read studies for fun and know how to translate them into language non-doctors can understand.</p>
+        <p>Internal medicine, rehabilitation, women&rsquo;s health, emergency medicine&thinsp;&mdash;&thinsp;I&rsquo;ve done the rounds, the night shifts, and the complicated inpatient cases. I read studies for fun (yes, really) and can translate them into something a non-doctor would understand.</p>
         <div class="skill-tags">
-          <span>Internal Medicine</span><span>Gastro</span><span>Rehab</span><span>Neuro-Ortho</span><span>R&amp;D</span>
+          <span>Internal Medicine</span><span>Rehab</span><span>Women&rsquo;s Health</span><span>Emergency</span><span>R&amp;D</span><span>Telemedicine</span>
         </div>
       </div>
       <div class="skill-card stagger-child">
         <div class="skill-icon">&sung;</div>
         <h3>Medical Writing &amp; Education</h3>
-        <p>I explain medicine without jargon, drama, or miracle-cure nonsense&thinsp;&mdash;&thinsp;whether it&rsquo;s chronic pancreatitis, vaccination schedules, or why magnesium baths are unlikely to fix much. More than 2,200 people have followed my work organically, without paid ads or clickbait.</p>
+        <p>I explain things like back pain, vaccination schedules, and common nutrition myths&thinsp;&mdash;&thinsp;and people come back for more. 2,200+ subscribers grown organically, with zero paid ads and zero &ldquo;miracle cure&rdquo; clickbait.</p>
         <div class="skill-tags">
-          <span>Medical Writing</span><span>Lectures</span><span>Blog</span><span>Reels</span><span>Telemedicine</span>
+          <span>Medical Writing</span><span>Lectures</span><span>Blog</span><span>Patient Education</span><span>Public Speaking</span>
         </div>
       </div>
       <div class="skill-card stagger-child">
         <div class="skill-icon">&rtrif;</div>
         <h3>Business &amp; Operations</h3>
-        <p>Plot twist: I&rsquo;ve been half-time managing a family construction materials business for 6+ years. Hiring, pricing, inventory, payroll, supplier negotiations. Not the most obvious path for a doctor, but it taught me how to manage things that don&rsquo;t come with a textbook.</p>
+        <p>For 6+ years I&rsquo;ve supported the operations of a family construction materials business: coordinating with suppliers, managing payments, overseeing maintenance, handling customer communication, and creating digital content. Not the most obvious path for a doctor, but it taught me how real businesses run.</p>
         <div class="skill-tags">
-          <span>Management</span><span>Pricing</span><span>Supply Chain</span><span>Facility Ops</span>
+          <span>Operations</span><span>Supplier Coordination</span><span>Digital Content</span><span>Social Media</span>
         </div>
       </div>
     </div>
@@ -787,17 +851,17 @@ footer {
         </div>
         <div class="phil-card stagger-child">
           <h3>Clarity is kindness</h3>
-          <p>If a patient leaves my office confused, that&rsquo;s on me, not them. The same goes for writing. I spend 10 minutes explaining that tomatoes and bell peppers can be eaten together if that&rsquo;s what it takes to undo a myth.</p>
+          <p>If a patient leaves my office confused, that&rsquo;s on me, not them. The same goes for writing. I&rsquo;ll spend 10 minutes explaining that eating after 6&thinsp;pm won&rsquo;t make you gain weight&thinsp;&mdash;&thinsp;or untangling things the internet told you about food&thinsp;&mdash;&thinsp;if that&rsquo;s what it takes to undo a myth.</p>
         </div>
         <div class="phil-card stagger-child">
           <h3>Doctors are people too</h3>
-          <p>I&rsquo;ve been on antidepressants, I&rsquo;ve been scared before surgery, and I once skipped an entire ophthalmology module because cataract surgery footage was too much for me. Being open about this makes me a better doctor, not a worse one.</p>
+          <p>I&rsquo;ve been on antidepressants. I&rsquo;ve been scared before surgery. Being open about this makes me a better doctor, not a worse one. And it makes the information I share more honest.</p>
         </div>
       </div>
       <div class="philosophy-visual reveal reveal-delay-2">
-        <img src="assets/polina-photos/IMG_4232 копия_resized.jpg" alt="Polina with stethoscope in pink scrubs" class="philosophy-img-main">
+        <img src="assets/polina-photos/IMG_4232 копия_resized.webp" alt="Polina with stethoscope in pink scrubs" class="philosophy-img-main">
         <span class="or-caption">During med school clinical rotation &darr;</span>
-        <img src="assets/polina-photos/real photo from an operation room.jpg" alt="Polina in the operating room during a clinical rotation" class="philosophy-img-or">
+        <img src="assets/polina-photos/real photo from an operation room.webp" alt="Polina in the operating room during a clinical rotation" class="philosophy-img-or">
       </div>
     </div>
   </div>
@@ -806,19 +870,25 @@ footer {
 <!-- PHOTO STRIP -->
 <div class="photo-strip" aria-hidden="true">
   <div class="strip-inner" id="photoStrip">
-    <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4250 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4405-2_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4223 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/первая помощь.webp" alt="First aid CPR training">
+    <img src="assets/polina-photos/IMG_4250 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Фиксация в концепции Кальтенборна.webp" alt="Kaltenborn mobilization technique">
+    <img src="assets/polina-photos/IMG_4405-2_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Учусь делать уколы ботоксом под УЗИ-навигацией.webp" alt="Ultrasound-guided injection training">
+    <img src="assets/polina-photos/IMG_4505 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4316 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4238 копия_resized.webp" alt="">
     <!-- duplicated for seamless loop -->
-    <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4250 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4405-2_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4223 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/первая помощь.webp" alt="">
+    <img src="assets/polina-photos/IMG_4250 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Фиксация в концепции Кальтенборна.webp" alt="">
+    <img src="assets/polina-photos/IMG_4405-2_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Учусь делать уколы ботоксом под УЗИ-навигацией.webp" alt="">
+    <img src="assets/polina-photos/IMG_4505 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4316 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4238 копия_resized.webp" alt="">
   </div>
 </div>
 
@@ -830,12 +900,12 @@ footer {
     <div class="timeline stagger-parent reveal">
       <div class="tl-item stagger-child">
         <div class="tl-meta">
-          <div class="tl-period">Education &middot; Sep 2025&ndash;Present</div>
-          <div class="tl-sub">Educational Platform<br>for Trainers</div>
+          <div class="tl-period">Freelance &middot; Sep 2025&ndash;Present</div>
+          <div class="tl-sub">Guest Lecturer</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Lecturer &mdash; Medical Education for Coaches</div>
-          <div class="tl-desc">Teaching coaches and trainers how to integrate medical evidence into their practice&thinsp;&mdash;&thinsp;building training programs for athletes with chronic conditions, bridging the gap between clinical knowledge and real-world coaching.</div>
+          <div class="tl-title">Guest Lecturer &mdash; Medical Education for Fitness Professionals</div>
+          <div class="tl-desc">Lecturing for fitness and coaching professionals on integrating medical evidence into training practice. Topics include knee pain management, pelvic floor health, and patient communication skills. In-person sessions in Moscow, 1&ndash;2 per month.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -844,18 +914,18 @@ footer {
           <div class="tl-sub">8 months</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Therapist &amp; Rehabilitologist</div>
-          <div class="tl-desc">Outpatient therapy, rehab consultations, individualized treatment programs, and telemedicine. This is where I learned to work with pregnant patients (and learned that being scared of them is normal for non-OB/GYN doctors).</div>
+          <div class="tl-title">General Practitioner &amp; Rehabilitation Specialist</div>
+          <div class="tl-desc">Outpatient care, rehabilitation consultations, individualized treatment programs, and telemedicine. The clinic specialized in women&rsquo;s health, and I actively immersed myself in this area&thinsp;&mdash;&thinsp;an experience that deepened my commitment to expanding access to quality women&rsquo;s health education.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
         <div class="tl-meta">
           <div class="tl-period">Retraining &middot; Sep 2024&ndash;May 2025</div>
-          <div class="tl-sub">Paediatric Rehabilitation</div>
+          <div class="tl-sub">Physical &amp; Rehabilitation<br>Medicine</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Professional Retraining &mdash; Rehabilitation Medicine &amp; Prosthetics R&amp;D</div>
-          <div class="tl-desc">Specialized retraining at a clinic working with children with cerebral palsy and post-oncology rehabilitation. In parallel, ran an independent R&amp;D project on thermoplastic prosthetics&thinsp;&mdash;&thinsp;literature review, sourcing materials from China, material experiments, and built a working prototype. A completely different kind of medicine and engineering, both driven by the same question: how do you make something that actually helps?</div>
+          <div class="tl-title">Professional Retraining &mdash; Physical and Rehabilitation Medicine</div>
+          <div class="tl-desc">Professional retraining in physical and rehabilitation medicine. Clinical placement at a rehabilitation clinic collaborating with foundations supporting children with cerebral palsy and post-oncology patients&thinsp;&mdash;&thinsp;plus work with athletes and rotations in hospital intensive care units. In parallel, ran an independent R&amp;D project on low-cost orthosis fabrication: sourced raw polycaprolactone (PCL) granules from China, developed a process to fabricate them into orthosis sheets (~8x cheaper than imported alternatives), and tested the resulting orthoses on real patients with positive results.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -865,7 +935,7 @@ footer {
         </div>
         <div class="tl-content">
           <div class="tl-title">Medical Residency &mdash; Internal Medicine (Therapy)</div>
-          <div class="tl-desc">Full residency in therapy. Complex inpatient cases, diagnostics, discharge planning. Included a year-long academic leave (Nov 2022&ndash;Nov 2023) traveling through Argentina, Chile, Brazil, Indonesia, and Turkey&thinsp;&mdash;&thinsp;because sometimes stepping away is part of learning.</div>
+          <div class="tl-desc">Two-year residency program in internal medicine, fully completed with accreditation. Complex inpatient cases, diagnostics, treatment planning, and discharge management. Included an academic leave period used for international experience and self-directed learning in data analytics.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -874,8 +944,8 @@ footer {
           <div class="tl-sub">Emergency Department<br>6 months</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Therapist &mdash; Emergency Admissions</div>
-          <div class="tl-desc">Triage and acute admission management in a high-volume ER. Fast-paced, high-stakes, not a lot of time to second-guess yourself.</div>
+          <div class="tl-title">General Practitioner &mdash; Emergency Admissions</div>
+          <div class="tl-desc">Triage and acute admission management in a high-volume emergency department. Parallel to residency&thinsp;&mdash;&thinsp;a separate clinical position, not a rotation. Fast-paced, high-stakes, independent clinical decision-making.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -884,8 +954,8 @@ footer {
           <div class="tl-sub">Family Business<br>Russia</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Operations Manager &mdash; Family Retail Enterprise</div>
-          <div class="tl-desc">Running the full operations of a family construction materials business in the background: ordering goods, hiring, payroll, pricing, and all the decisions that keep the thing going. My main focus was always medicine, but this taught me everything about managing people and processes.</div>
+          <div class="tl-title">Operations &amp; Digital Support &mdash; Family Retail Enterprise</div>
+          <div class="tl-desc">Supporting the operations of a family construction materials business: coordinating with suppliers and contractors, managing payments, overseeing maintenance, and handling customer communication via social media. Also created content for the company website and managed the online store while it was active.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -904,9 +974,37 @@ footer {
           <div class="tl-sub">Pavlov University<br>Saint Petersburg</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">MD in Therapy &amp; Rehabilitation</div>
-          <div class="tl-desc">Degree homologated (recognized) in Spain. Additional training in gastroenterology, neuro-orthopedics, rehab team methodology, orthostatic hypotension, and data analytics (SQL, Google Sheets).</div>
+          <div class="tl-title">Medical Degree (General Medicine)</div>
+          <div class="tl-desc">Degree homologated (recognized) in Spain. Additional clinical training in gastroenterology and neuro-orthopedics.</div>
         </div>
+      </div>
+    </div>
+    <!-- Skills Summary -->
+    <div class="skills-summary reveal" style="margin-top:3rem; display:grid; grid-template-columns:1fr 1fr; gap:1.2rem 3rem;">
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Clinical</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Internal medicine, rehabilitation medicine, gastroenterology, women&rsquo;s health, emergency medicine, telemedicine</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Research &amp; R&amp;D</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Literature review, evidence synthesis, polycaprolactone (PCL) orthosis materials research, prototype development</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Communication</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Medical writing, patient education, evidence-based content creation, public speaking</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Operations</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Supplier management, digital content, social media communication, business coordination</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Technical</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">SQL, Google Sheets / data analytics</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Languages</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Russian (native), Spanish, English</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- R&D SHOWCASE -->
+<section class="rnd-showcase" id="rnd">
+  <div class="container">
+    <p class="section-label reveal">Independent R&amp;D</p>
+    <h2 class="section-title reveal">From raw material to <em>working prototype</em></h2>
+    <div class="rnd-layout">
+      <div class="rnd-photos reveal">
+        <img src="assets/polina-photos/additional_info_photos/prototype_held.webp" alt="Polycaprolactone orthosis sheet held in hand">
+        <img src="assets/polina-photos/additional_info_photos/prototype_worn.webp" alt="PCL orthosis worn on hand — three views" class="rnd-wide">
+      </div>
+      <div class="rnd-text reveal reveal-delay-2">
+        <h3>Polycaprolactone Orthosis Fabrication</h3>
+        <p>Sourced raw PCL granules from China, developed a process to fabricate them into orthosis sheets (~8x cheaper than imported alternatives), and tested the resulting orthoses on real patients with positive results.</p>
+        <p>It was part clinical curiosity, part engineering challenge, and it taught me how to take a problem from raw material all the way to clinical validation.</p>
       </div>
     </div>
   </div>
@@ -921,7 +1019,7 @@ footer {
       <div class="content-card stagger-child">
         <div class="cc-platform">Telegram &middot; Instagram</div>
         <h3>&ldquo;Med-Pop by a Therapist&rdquo;</h3>
-        <p>My evidence-based medical blog in Russian. 2,200+ subscribers, zero ads, all organic. I write about back pain, vaccination, cholesterol, myths your nutritionist told you, and why you should probably get that blood test. I also share my own health journey&thinsp;&mdash;&thinsp;including the parts that aren&rsquo;t very glamorous.</p>
+        <p>My evidence-based medical blog in Russian. 2,200+ subscribers, zero ads, all organic growth. I write about back pain, vaccination, cholesterol, common nutrition myths, and things the internet told you about food. I also share my own health journey&thinsp;&mdash;&thinsp;including the parts that aren&rsquo;t very glamorous.</p>
         <div class="cc-links">
           <a href="https://t.me/p_kobra_med" target="_blank">Telegram &rarr;</a>
           <a href="https://www.instagram.com/dr_p_kobra/" target="_blank">Instagram &rarr;</a>
@@ -929,8 +1027,15 @@ footer {
       </div>
       <div class="content-card stagger-child">
         <div class="cc-platform">Lectures &amp; Workshops</div>
-        <h3>Teaching Coaches &amp; Med Students</h3>
-        <p>I give lectures on how to build training programs for athletes with chronic conditions, how to actually talk to patients, and how to integrate medical evidence into coaching without getting lost in jargon. If you train people with bodies (so&hellip; everyone), we should talk.</p>
+        <h3>Lectures &amp; Workshops</h3>
+        <p>I&rsquo;ve lectured on knee pain management, pelvic floor health, and how to actually communicate with patients. 9 sessions delivered to fitness and coaching professionals, bridging clinical evidence and real-world training practice. If you work with people who have bodies (so&hellip; everyone), we should talk.</p>
+        <div class="teaching-video" style="margin-top:1.2rem;">
+          <video autoplay muted loop playsinline>
+            <source src="assets/polina-photos/additional_info_photos/video.webm" type="video/webm">
+            <source src="assets/polina-photos/additional_info_photos/video.mp4" type="video/mp4">
+          </video>
+          <p class="teaching-video-caption">Teaching the recovery position&thinsp;&mdash;&thinsp;how to safely position an unconscious person who is still breathing.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -941,21 +1046,21 @@ footer {
   <div class="container">
     <p class="section-label reveal">Let&rsquo;s Talk</p>
     <h2 class="section-title reveal">I&rsquo;m looking for <em>my next thing</em></h2>
-    <p class="contact-desc reveal reveal-delay-1">Specifically: remote-friendly roles in health R&amp;D, medical writing, health-tech, or health communication. I&rsquo;m open to relocation across the EU, US, or Asia. If what I do sounds useful to you, reach out&thinsp;&mdash;&thinsp;I&rsquo;d love to hear what you&rsquo;re working on.</p>
+    <p class="contact-desc reveal reveal-delay-1">Specifically: remote-friendly positions in health R&amp;D, medical writing, health-tech, digital health, or health communication. Open to relocation across the EU, US, or Asia. If what I do sounds relevant to what you&rsquo;re building, I&rsquo;d love to hear about it.</p>
     <div class="cv-grid stagger-parent reveal">
       <div class="cv-card stagger-child">
-        <h3>Health / Wellness R&amp;D in a Startup</h3>
-        <p>Literature review, clinical validation, product-science alignment. I&rsquo;ve done independent R&amp;D from scratch&thinsp;&mdash;&thinsp;from sourcing materials in China to building a working prototype. Ready to bring that to a team that moves fast.</p>
+        <h3>Health / Wellness R&amp;D</h3>
+        <p>Literature review, evidence synthesis, clinical validation, product-science alignment. I&rsquo;ve run independent R&amp;D from scratch&thinsp;&mdash;&thinsp;from sourcing materials internationally to building a working prototype. Ready to bring that discipline to a team that moves fast.</p>
         <a href="https://docs.google.com/document/d/1Ojs6JJoY1gWTtl3eASQj7nQHaFKuq4Ze/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">View CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
         <h3>Medical Content / Medical Writing</h3>
-        <p>Evidence-based content, patient education, health communication. I already run a 2,200-subscriber blog with zero ads&thinsp;&mdash;&thinsp;turning clinical data into something humans actually want to read is what I do for fun.</p>
+        <p>Evidence-based content, patient education, health communication. I run a 2,200-subscriber medical blog with zero ads&thinsp;&mdash;&thinsp;turning clinical research into something people actually want to read is what I do in my free time. Imagine what I&rsquo;d do full-time.</p>
         <a href="https://docs.google.com/document/d/105aohL75spAWHxSO6-6zdniJGJHuq82V/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">View CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
-        <h3>Health-Tech Product</h3>
-        <p>Research, ops, clinical input for product teams. No product experience yet&thinsp;&mdash;&thinsp;but I&rsquo;ve managed a business, run R&amp;D solo, and spent years translating between doctors and non-doctors. Looking for a team willing to bet on that.</p>
+        <h3>Health-Tech / Product</h3>
+        <p>Clinical thinking, research skills, and operational experience for product teams. I&rsquo;ve managed business operations, run R&amp;D independently, and spent years translating between medical professionals and everyone else. Looking for a team that values cross-functional thinking.</p>
         <a href="https://docs.google.com/document/d/103xD5nh_1xH4KDAm_fXHzJBynMd8RTvH/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">View CV &rarr;</a>
       </div>
     </div>

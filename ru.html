@@ -415,7 +415,7 @@ section { padding: 7rem 2.5rem; }
 .strip-inner {
   display: flex;
   gap: 0.5rem;
-  animation: slide 30s linear infinite;
+  animation: slide 40s linear infinite;
 }
 .strip-inner img {
   height: 320px; width: auto;
@@ -626,7 +626,9 @@ footer {
   .philosophy-visual { order: -1; }
   .philosophy-img-or { width: 140px; right: -0.5rem; top: -0.5rem; }
   .or-caption { display: none; }
-  .strip-inner { animation-duration: 15s; }
+  .strip-inner { animation-duration: 20s; }
+  .rnd-layout { grid-template-columns: 1fr !important; }
+  .rnd-photos { order: -1; }
   .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .tl-meta { text-align: left; }
   .content-grid { grid-template-columns: 1fr; }
@@ -696,10 +698,10 @@ footer {
   </div>
   <div class="hero-photos">
     <div class="hero-img-wrap">
-      <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="Полина в белом халате, улыбается" class="hero-img-main">
+      <img src="assets/polina-photos/IMG_4505 копия_resized.webp" alt="Полина в белом халате, улыбается" class="hero-img-main">
     </div>
     <div class="hero-float">
-      <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="Полина в розовой форме, расслабленная и открытая">
+      <img src="assets/polina-photos/IMG_4223 копия_resized.webp" alt="Полина в розовой форме, расслабленная и открытая">
     </div>
   </div>
   </div>
@@ -711,9 +713,9 @@ footer {
     <div class="about-text reveal">
       <p class="section-label">Обо мне</p>
       <h2 class="section-title">Сначала врач.<br>Всё остальное <em>выросло из этого.</em></h2>
-      <p>Я окончила Первый Санкт-Петербургский государственный медицинский университет имени Павлова, прошла ординатуру по терапии и гастроэнтерологии, работала и в приёмном отделении, и в частной практике. Мой диплом омологирован в Испании, так что я могу практиковать в ЕС.</p>
-      <p>Где-то по пути я также начала на полставки управлять семейным розничным бизнесом (найм, ценообразование, зарплаты&thinsp;&mdash;&thinsp;всё), занималась независимыми исследованиями и разработкой термопластичных протезов&thinsp;&mdash;&thinsp;от обзора литературы до закупки материалов из Китая и создания рабочего прототипа&thinsp;&mdash;&thinsp;и начала писать о медицине в интернете, потому что больше не могла смотреть на одни и те же мифы повсюду.</p>
-      <p>Я говорю на трёх языках (русский, испанский, английский), жила в 6+ странах на 4 континентах, и мне проще объяснить, как работает ваш кишечник, чем написать раздел &laquo;обо мне&raquo;.</p>
+      <p>Я окончила Первый Санкт-Петербургский государственный медицинский университет имени Павлова, прошла двухлетнюю ординатуру по терапии, а затем профессиональную переподготовку по физической и реабилитационной медицине. Мой клинический опыт включает стационарную медицину, приёмное отделение, амбулаторную практику, женское здоровье и телемедицину. Диплом омологирован (признан) в Испании.</p>
+      <p>Помимо клинической работы, я веду доказательный медицинский блог с 2&thinsp;200+ подписчиками (органический рост), провела независимый R&amp;D-проект&thinsp;&mdash;&thinsp;изготовление ортезных пластин из поликапролактоновых гранул, ~в&thinsp;8 раз дешевле импортных аналогов, с тестированием на реальных пациентах&thinsp;&mdash;&thinsp;и последние шесть лет поддерживаю операционную деятельность семейного бизнеса: от логистики поставщиков до создания контента.</p>
+      <p>Мне интересно, как пересекаются медицина, коммуникация и технологии. Мне важны женское здоровье, просвещение пациентов, инновации в реабилитации и доступность доказательной информации для тех, кому она нужна.</p>
       <div class="stats-row">
         <div class="stat">
           <div class="stat-num">4+</div>
@@ -728,14 +730,14 @@ footer {
           <div class="stat-label">Людей читают мой медицинский блог (и задают хорошие вопросы)</div>
         </div>
         <div class="stat">
-          <div class="stat-num">6+</div>
-          <div class="stat-label">Стран на 4&nbsp;континентах</div>
+          <div class="stat-num">8x</div>
+          <div class="stat-label">Дешевле прототип ортеза vs&nbsp;импорт</div>
         </div>
       </div>
     </div>
     <div class="about-photos reveal reveal-delay-2">
-      <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="Полина сидит расслабленно в розовом, тепло улыбается" class="about-img-main">
-      <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="Полина в неформальной обстановке" class="about-img-small">
+      <img src="assets/polina-photos/IMG_4238 копия_resized.webp" alt="Полина сидит расслабленно в розовом, тепло улыбается" class="about-img-main">
+      <img src="assets/polina-photos/IMG_4316 копия_resized.webp" alt="Полина в неформальной обстановке" class="about-img-small">
     </div>
   </div>
 </section>
@@ -749,25 +751,25 @@ footer {
       <div class="skill-card stagger-child">
         <div class="skill-icon">&oplus;</div>
         <h3>Клиническая медицина и исследования</h3>
-        <p>Терапия, гастроэнтерология, реабилитация&thinsp;&mdash;&thinsp;я прошла через обходы, ночные дежурства и сложные стационарные случаи. Я читаю исследования для удовольствия (да, правда) и умею перевести их на язык, понятный не-врачу.</p>
+        <p>Терапия, реабилитация, женское здоровье, скорая помощь&thinsp;&mdash;&thinsp;я прошла через обходы, ночные дежурства и сложные стационарные случаи. Я читаю исследования для удовольствия (да, правда) и умею перевести их на язык, понятный не-врачу.</p>
         <div class="skill-tags">
-          <span>Терапия</span><span>Гастро</span><span>Реабилитация</span><span>Нейро-ортопедия</span><span>R&amp;D</span><span>SQL</span>
+          <span>Терапия</span><span>Реабилитация</span><span>Женское здоровье</span><span>Скорая</span><span>R&amp;D</span><span>Телемедицина</span>
         </div>
       </div>
       <div class="skill-card stagger-child">
         <div class="skill-icon">&sung;</div>
         <h3>Медицинское писательство и просвещение</h3>
-        <p>Я объясняю такие вещи, как хронический панкреатит, графики вакцинации и почему ванны с магнием вас, скорее всего, не спасут&thinsp;&mdash;&thinsp;и люди возвращаются за добавкой. 2&thinsp;200+ подписчиков, выросших органически, без рекламы и без кликбейта про &laquo;чудо-средства&raquo;.</p>
+        <p>Я объясняю такие вещи, как боль в спине, графики вакцинации и популярные мифы о питании&thinsp;&mdash;&thinsp;и люди возвращаются за добавкой. 2&thinsp;200+ подписчиков, выросших органически, без рекламы и без кликбейта про &laquo;чудо-средства&raquo;.</p>
         <div class="skill-tags">
-          <span>Медтексты</span><span>Лекции</span><span>Блог</span><span>Reels</span><span>Телемедицина</span>
+          <span>Медтексты</span><span>Лекции</span><span>Блог</span><span>Просвещение пациентов</span><span>Выступления</span>
         </div>
       </div>
       <div class="skill-card stagger-child">
         <div class="skill-icon">&rtrif;</div>
         <h3>Бизнес и операционное управление</h3>
-        <p>Сюжетный поворот: я уже 6+ лет на полставки управляю семейным бизнесом по продаже стройматериалов. Найм, ценообразование, склад, зарплаты, переговоры с поставщиками. Не самый очевидный путь для врача, но это научило меня управлять вещами, для которых нет учебника.</p>
+        <p>Уже 6+ лет я поддерживаю операционную работу семейного бизнеса по продаже стройматериалов: координация с поставщиками, управление платежами, техобслуживание, общение с клиентами и создание контента. Не самый очевидный путь для врача, но это научило меня тому, как реальный бизнес работает.</p>
         <div class="skill-tags">
-          <span>Управление</span><span>Ценообразование</span><span>Логистика</span><span>Операционка</span>
+          <span>Операционка</span><span>Поставщики</span><span>Контент</span><span>Соцсети</span>
         </div>
       </div>
     </div>
@@ -787,17 +789,17 @@ footer {
         </div>
         <div class="phil-card stagger-child">
           <h3>Ясность &mdash; это забота</h3>
-          <p>Если пациент ушёл из моего кабинета в замешательстве&thinsp;&mdash;&thinsp;это моя проблема, а не его. То же и с текстами. Я потрачу 10 минут, объясняя, что помидоры и болгарский перец можно есть вместе, если это то, что нужно, чтобы развеять миф.</p>
+          <p>Если пациент ушёл из моего кабинета в замешательстве&thinsp;&mdash;&thinsp;это моя проблема, а не его. То же и с текстами. Я потрачу 10 минут, объясняя, что еда после 18:00 не приведёт к набору веса&thinsp;&mdash;&thinsp;или разбирая то, что интернет рассказал вам о питании&thinsp;&mdash;&thinsp;если это то, что нужно, чтобы развеять миф.</p>
         </div>
         <div class="phil-card stagger-child">
           <h3>Врачи тоже люди</h3>
-          <p>Я пила антидепрессанты, мне было страшно перед операцией, и однажды я пропустила целый блок по офтальмологии, потому что видео операции на катаракте оказалось для меня слишком. Быть открытой в этом делает меня лучшим врачом, а не худшим.</p>
+          <p>Я пила антидепрессанты. Мне было страшно перед операцией. Быть открытой в этом делает меня лучшим врачом, а не худшим. И делает информацию, которой я делюсь, более честной.</p>
         </div>
       </div>
       <div class="philosophy-visual reveal reveal-delay-2">
-        <img src="assets/polina-photos/IMG_4232 копия_resized.jpg" alt="Полина со стетоскопом в розовой форме" class="philosophy-img-main">
+        <img src="assets/polina-photos/IMG_4232 копия_resized.webp" alt="Полина со стетоскопом в розовой форме" class="philosophy-img-main">
         <span class="or-caption">Во время клинической ротации в медвузе &darr;</span>
-        <img src="assets/polina-photos/real photo from an operation room.jpg" alt="Полина в операционной во время клинической ротации" class="philosophy-img-or">
+        <img src="assets/polina-photos/real photo from an operation room.webp" alt="Полина в операционной во время клинической ротации" class="philosophy-img-or">
       </div>
     </div>
   </div>
@@ -806,19 +808,25 @@ footer {
 <!-- PHOTO STRIP -->
 <div class="photo-strip" aria-hidden="true">
   <div class="strip-inner" id="photoStrip">
-    <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4250 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4405-2_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4223 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/первая помощь.webp" alt="Отработка СЛР">
+    <img src="assets/polina-photos/IMG_4250 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Фиксация в концепции Кальтенборна.webp" alt="Мобилизация по Кальтенборну">
+    <img src="assets/polina-photos/IMG_4405-2_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Учусь делать уколы ботоксом под УЗИ-навигацией.webp" alt="Инъекции под УЗИ-навигацией">
+    <img src="assets/polina-photos/IMG_4505 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4316 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4238 копия_resized.webp" alt="">
     <!-- duplicated for seamless loop -->
-    <img src="assets/polina-photos/IMG_4223 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4250 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4405-2_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4505 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4316 копия_resized.jpg" alt="">
-    <img src="assets/polina-photos/IMG_4238 копия_resized.jpg" alt="">
+    <img src="assets/polina-photos/IMG_4223 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/первая помощь.webp" alt="">
+    <img src="assets/polina-photos/IMG_4250 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Фиксация в концепции Кальтенборна.webp" alt="">
+    <img src="assets/polina-photos/IMG_4405-2_resized.webp" alt="">
+    <img src="assets/polina-photos/additional_info_photos/Учусь делать уколы ботоксом под УЗИ-навигацией.webp" alt="">
+    <img src="assets/polina-photos/IMG_4505 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4316 копия_resized.webp" alt="">
+    <img src="assets/polina-photos/IMG_4238 копия_resized.webp" alt="">
   </div>
 </div>
 
@@ -830,12 +838,12 @@ footer {
     <div class="timeline stagger-parent reveal">
       <div class="tl-item stagger-child">
         <div class="tl-meta">
-          <div class="tl-period">Образование &middot; Сен 2025&ndash;наст. время</div>
-          <div class="tl-sub">Образовательная платформа<br>для тренеров</div>
+          <div class="tl-period">Фриланс &middot; Сен 2025&ndash;наст. время</div>
+          <div class="tl-sub">Приглашённый лектор</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Лектор &mdash; Медицинское образование для тренеров</div>
-          <div class="tl-desc">Обучаю тренеров интеграции медицинских данных в их практику&thinsp;&mdash;&thinsp;разработка тренировочных программ для спортсменов с хроническими заболеваниями, мост между клиническими знаниями и реальным тренерством.</div>
+          <div class="tl-title">Приглашённый лектор &mdash; Медицинское образование для фитнес-специалистов</div>
+          <div class="tl-desc">Лекции для фитнес-тренеров по интеграции медицинских данных в тренировочную практику. Темы: ведение боли в коленях, здоровье тазового дна, навыки коммуникации с пациентами. Очные сессии в Москве, 1&ndash;2 в месяц.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -844,18 +852,18 @@ footer {
           <div class="tl-sub">8 месяцев</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Терапевт и реабилитолог</div>
-          <div class="tl-desc">Амбулаторная терапия, реабилитационные консультации, индивидуальные программы лечения и телемедицина. Именно здесь я научилась работать с беременными пациентками (и узнала, что бояться их&thinsp;&mdash;&thinsp;нормально для врачей не из акушерства).</div>
+          <div class="tl-title">Врач-терапевт и специалист по реабилитации</div>
+          <div class="tl-desc">Амбулаторный приём, реабилитационные консультации, индивидуальные программы лечения и телемедицина. Клиника специализировалась на женском здоровье, и я активно погрузилась в эту область&thinsp;&mdash;&thinsp;опыт, который укрепил моё стремление расширять доступ к качественному образованию в сфере женского здоровья.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
         <div class="tl-meta">
           <div class="tl-period">Переподготовка &middot; Сен 2024&ndash;Май 2025</div>
-          <div class="tl-sub">Детская реабилитация</div>
+          <div class="tl-sub">Физическая и реабилитационная<br>медицина</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Профессиональная переподготовка &mdash; Реабилитационная медицина и R&amp;D протезов</div>
-          <div class="tl-desc">Специализированная переподготовка в клинике, работающей с детьми с ДЦП и пост-онкологической реабилитацией. Параллельно вела независимый R&amp;D-проект по термопластичным протезам&thinsp;&mdash;&thinsp;обзор литературы, закупка материалов из Китая, эксперименты с материалами и создание рабочего прототипа. Совершенно другой вид медицины и инженерии, но оба движимы одним вопросом: как сделать что-то, что реально помогает?</div>
+          <div class="tl-title">Профессиональная переподготовка &mdash; Физическая и реабилитационная медицина</div>
+          <div class="tl-desc">Профессиональная переподготовка по физической и реабилитационной медицине. Клиническая практика в реабилитационной клинике, сотрудничающей с фондами поддержки детей с ДЦП и пост-онкологических пациентов&thinsp;&mdash;&thinsp;плюс работа со спортсменами и ротации в реанимационных отделениях. Параллельно вела независимый R&amp;D-проект по изготовлению бюджетных ортезов: закупила поликапролактоновые (ПКЛ) гранулы из Китая, разработала процесс изготовления ортезных пластин (~в&thinsp;8 раз дешевле импортных аналогов) и протестировала ортезы на реальных пациентах с положительными результатами.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -865,7 +873,7 @@ footer {
         </div>
         <div class="tl-content">
           <div class="tl-title">Ординатура &mdash; Терапия</div>
-          <div class="tl-desc">Полная ординатура по терапии. Сложные стационарные случаи, диагностика, планирование выписки. Включала годичный академический отпуск (Ноя 2022&ndash;Ноя 2023) с путешествиями по Аргентине, Чили, Бразилии, Индонезии и Турции&thinsp;&mdash;&thinsp;потому что иногда отойти в сторону&thinsp;&mdash;&thinsp;тоже часть обучения.</div>
+          <div class="tl-desc">Двухлетняя программа ординатуры по терапии, полностью завершена с аккредитацией. Сложные стационарные случаи, диагностика, планирование лечения и ведение выписки. Включала академический отпуск, использованный для международного опыта и самостоятельного обучения аналитике данных.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -874,8 +882,8 @@ footer {
           <div class="tl-sub">Приёмное отделение<br>6 месяцев</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Терапевт &mdash; Экстренный приём</div>
-          <div class="tl-desc">Сортировка и ведение острых госпитализаций в загруженном приёмном отделении. Быстрый темп, высокие ставки, мало времени на сомнения.</div>
+          <div class="tl-title">Врач-терапевт &mdash; Экстренный приём</div>
+          <div class="tl-desc">Сортировка и ведение острых госпитализаций в загруженном приёмном отделении. Параллельно с ординатурой&thinsp;&mdash;&thinsp;отдельная клиническая позиция, не ротация. Быстрый темп, высокие ставки, самостоятельное принятие клинических решений.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -884,8 +892,8 @@ footer {
           <div class="tl-sub">Семейный бизнес<br>Россия</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Операционный менеджер &mdash; Семейное розничное предприятие</div>
-          <div class="tl-desc">Полное операционное управление семейным бизнесом по продаже стройматериалов на фоне основной работы: заказ товаров, найм, зарплаты, ценообразование и все решения, которые не дают делу остановиться. Моим главным фокусом всегда была медицина, но это научило меня всему про управление людьми и процессами.</div>
+          <div class="tl-title">Операционная поддержка &mdash; Семейное розничное предприятие</div>
+          <div class="tl-desc">Поддержка операционной деятельности семейного бизнеса по продаже стройматериалов: координация с поставщиками и подрядчиками, управление платежами, контроль техобслуживания, общение с клиентами через соцсети. Также создавала контент для сайта компании и управляла интернет-магазином, пока он был активен.</div>
         </div>
       </div>
       <div class="tl-item stagger-child">
@@ -904,9 +912,37 @@ footer {
           <div class="tl-sub">Университет Павлова<br>Санкт-Петербург</div>
         </div>
         <div class="tl-content">
-          <div class="tl-title">Диплом врача по терапии и реабилитации</div>
-          <div class="tl-desc">Диплом омологирован (признан) в Испании. Дополнительная подготовка по гастроэнтерологии, нейро-ортопедии, методологии реабилитационной команды, ортостатической гипотензии и аналитике данных (SQL, Google Sheets).</div>
+          <div class="tl-title">Диплом врача (Лечебное дело)</div>
+          <div class="tl-desc">Диплом омологирован (признан) в Испании. Дополнительная клиническая подготовка по гастроэнтерологии и нейро-ортопедии.</div>
         </div>
+      </div>
+    </div>
+    <!-- Skills Summary -->
+    <div class="skills-summary reveal" style="margin-top:3rem; display:grid; grid-template-columns:1fr 1fr; gap:1.2rem 3rem;">
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Клиника</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Терапия, реабилитационная медицина, гастроэнтерология, женское здоровье, скорая помощь, телемедицина</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Исследования и R&amp;D</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Обзор литературы, синтез доказательств, исследование материалов для ортезов (ПКЛ), разработка прототипов</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Коммуникация</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Медицинское писательство, просвещение пациентов, создание доказательного контента, публичные выступления</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Операционка</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Управление поставщиками, цифровой контент, коммуникация в соцсетях, координация бизнеса</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Техническое</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">SQL, Google Sheets / аналитика данных</p></div>
+      <div><strong style="color:var(--orange);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">Языки</strong><p style="font-size:0.88rem;color:var(--brown-mid);margin-top:0.3rem;line-height:1.7;">Русский (родной), испанский, английский</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- R&D SHOWCASE -->
+<section class="rnd-showcase" id="rnd" style="background:var(--bg);">
+  <div class="container">
+    <p class="section-label reveal">Независимый R&amp;D</p>
+    <h2 class="section-title reveal">От сырья до <em>рабочего прототипа</em></h2>
+    <div class="rnd-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div class="rnd-photos reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <img src="assets/polina-photos/additional_info_photos/prototype_held.webp" alt="Поликапролактоновая ортезная пластина в руке" style="width:100%;border-radius:8px;box-shadow:0 12px 40px rgba(44,24,16,0.12);">
+        <img src="assets/polina-photos/additional_info_photos/prototype_worn.webp" alt="ПКЛ-ортез на руке — три вида" style="width:100%;border-radius:8px;box-shadow:0 12px 40px rgba(44,24,16,0.12);grid-column:1/-1;">
+      </div>
+      <div class="rnd-text reveal reveal-delay-2">
+        <h3 style="font-family:var(--display);font-size:1.3rem;font-weight:600;color:var(--brown-dark);margin-bottom:0.8rem;">Изготовление поликапролактоновых ортезов</h3>
+        <p style="font-size:0.92rem;color:var(--brown-mid);line-height:1.75;margin-bottom:1rem;">Закупила ПКЛ-гранулы из Китая, разработала процесс изготовления ортезных пластин (~в&thinsp;8 раз дешевле импортных аналогов) и протестировала готовые ортезы на реальных пациентах с положительными результатами.</p>
+        <p style="font-size:0.92rem;color:var(--brown-mid);line-height:1.75;">Отчасти клиническое любопытство, отчасти инженерный вызов&thinsp;&mdash;&thinsp;этот проект научил меня вести задачу от сырья до клинической валидации.</p>
       </div>
     </div>
   </div>
@@ -921,7 +957,7 @@ footer {
       <div class="content-card stagger-child">
         <div class="cc-platform">Telegram &middot; Instagram</div>
         <h3>&laquo;&#1084;&#1077;&#1076;&#1087;&#1086;&#1087; &#1086;&#1090; &#1090;&#1077;&#1088;&#1072;&#1087;&#1077;&#1074;&#1090;&#1072;&raquo;</h3>
-        <p>Мой блог о доказательной медицине на русском языке. 2&thinsp;200+ подписчиков, ноль рекламы, только органический рост. Я пишу о боли в спине, вакцинации, холестерине, мифах от вашего нутрициолога и о том, почему вам, наверное, стоит сдать тот анализ крови. А ещё делюсь собственным путём в здоровье&thinsp;&mdash;&thinsp;включая части, которые не очень гламурные.</p>
+        <p>Мой блог о доказательной медицине на русском языке. 2&thinsp;200+ подписчиков, ноль рекламы, только органический рост. Я пишу о боли в спине, вакцинации, холестерине, популярных мифах о питании и вещах, которые интернет рассказал вам о еде. А ещё делюсь собственным путём в здоровье&thinsp;&mdash;&thinsp;включая части, которые не очень гламурные.</p>
         <div class="cc-links">
           <a href="https://t.me/p_kobra_med" target="_blank">Telegram &rarr;</a>
           <a href="https://www.instagram.com/dr_p_kobra/" target="_blank">Instagram &rarr;</a>
@@ -929,8 +965,15 @@ footer {
       </div>
       <div class="content-card stagger-child">
         <div class="cc-platform">Лекции и мастер-классы</div>
-        <h3>Обучение тренеров и студентов-медиков</h3>
-        <p>Я читаю лекции о том, как строить тренировочные программы для спортсменов с хроническими заболеваниями, как на самом деле разговаривать с пациентами и как интегрировать медицинские данные в тренерскую работу без утопания в терминологии. Если вы тренируете людей с телами (то&thinsp;есть&hellip; всех), нам стоит поговорить.</p>
+        <h3>Лекции и мастер-классы</h3>
+        <p>Я читала лекции о ведении боли в коленях, здоровье тазового дна и о том, как на самом деле общаться с пациентами. 9 сессий для фитнес-тренеров, связывая клинические данные и реальную тренировочную практику. Если вы работаете с людьми, у которых есть тела (то&thinsp;есть&hellip; со всеми), нам стоит поговорить.</p>
+        <div style="margin-top:1.2rem;max-width:360px;border-radius:8px;overflow:hidden;box-shadow:0 12px 40px rgba(44,24,16,0.12);">
+          <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:8px;">
+            <source src="assets/polina-photos/additional_info_photos/video.webm" type="video/webm">
+            <source src="assets/polina-photos/additional_info_photos/video.mp4" type="video/mp4">
+          </video>
+          <p style="font-size:0.78rem;color:var(--brown-light);font-style:italic;margin-top:0.6rem;line-height:1.5;padding:0 0.2rem;">Учу придавать устойчивое боковое положение&thinsp;&mdash;&thinsp;когда человек без сознания, но дышит, его надо положить на бочок.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -941,21 +984,21 @@ footer {
   <div class="container">
     <p class="section-label reveal">Давайте поговорим</p>
     <h2 class="section-title reveal">Я ищу <em>своё следующее дело</em></h2>
-    <p class="contact-desc reveal reveal-delay-1">А именно: удалённые роли в сфере R&amp;D здоровья, медицинского писательства, health-tech или медицинской коммуникации. Я открыта к релокации в ЕС, США или Азию. Если то, что я делаю, звучит полезно для вас, напишите&thinsp;&mdash;&thinsp;мне будет интересно узнать, над чем вы работаете.</p>
+    <p class="contact-desc reveal reveal-delay-1">А именно: удалённые позиции в сфере R&amp;D здоровья, медицинского писательства, health-tech, цифрового здоровья или медицинской коммуникации. Открыта к релокации в ЕС, США или Азию. Если то, что я делаю, звучит релевантно для того, что вы строите, буду рада узнать об этом.</p>
     <div class="cv-grid stagger-parent reveal">
       <div class="cv-card stagger-child">
-        <h3>R&amp;D в сфере здоровья / велнеса в стартапе</h3>
-        <p>Обзор литературы, клиническая валидация, связь продукта и науки. Я делала независимые исследования с нуля&thinsp;&mdash;&thinsp;от закупки материалов в Китае до создания рабочего прототипа. Готова принести это в команду, которая двигается быстро.</p>
+        <h3>R&amp;D в сфере здоровья / велнеса</h3>
+        <p>Обзор литературы, синтез доказательств, клиническая валидация, связь продукта и науки. Я вела независимые исследования с нуля&thinsp;&mdash;&thinsp;от международной закупки материалов до создания рабочего прототипа. Готова принести эту дисциплину в команду, которая двигается быстро.</p>
         <a href="https://docs.google.com/document/d/1Ojs6JJoY1gWTtl3eASQj7nQHaFKuq4Ze/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">Смотреть CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
         <h3>Медицинский контент / Медицинское писательство</h3>
-        <p>Контент на основе доказательной медицины, обучение пациентов, медицинская коммуникация. Я уже веду блог на 2&thinsp;200 подписчиков без рекламы&thinsp;&mdash;&thinsp;превращать клинические данные в то, что люди действительно хотят читать, это то, что я делаю для удовольствия.</p>
+        <p>Контент на основе доказательной медицины, обучение пациентов, медицинская коммуникация. Я веду медицинский блог на 2&thinsp;200 подписчиков без рекламы&thinsp;&mdash;&thinsp;превращать клинические исследования в то, что люди действительно хотят читать, это то, что я делаю в свободное время. Представьте, что я делала бы на полную ставку.</p>
         <a href="https://docs.google.com/document/d/105aohL75spAWHxSO6-6zdniJGJHuq82V/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">Смотреть CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
-        <h3>Health-Tech продукт</h3>
-        <p>Исследования, операционка, клинический вклад для продуктовых команд. Продуктового опыта пока нет&thinsp;&mdash;&thinsp;но я управляла бизнесом, вела R&amp;D в одиночку и годами переводила между врачами и не-врачами. Ищу команду, готовую сделать ставку на это.</p>
+        <h3>Health-Tech / Продукт</h3>
+        <p>Клиническое мышление, исследовательские навыки и операционный опыт для продуктовых команд. Я управляла бизнес-операциями, вела R&amp;D самостоятельно и годами переводила между медицинскими специалистами и всеми остальными. Ищу команду, которая ценит кроссфункциональное мышление.</p>
         <a href="https://docs.google.com/document/d/103xD5nh_1xH4KDAm_fXHzJBynMd8RTvH/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">Смотреть CV &rarr;</a>
       </div>
     </div>
