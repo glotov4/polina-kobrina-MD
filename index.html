@@ -511,11 +511,65 @@ section { padding: 7rem 2.5rem; }
 }
 
 /* ========= CV / LOOKING FOR ========= */
+.paths-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.paths-intro .paths-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange-warm);
+  margin-bottom: 0.6rem;
+}
+.paths-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 1.5rem auto 0;
+  max-width: 700px;
+  position: relative;
+}
+.paths-visual .path-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(232,104,48,0.15);
+  z-index: 2;
+}
+.paths-visual .path-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--pink));
+  position: relative;
+}
+.paths-visual .path-line::after {
+  content: '';
+  position: absolute;
+  right: -1px; top: 50%;
+  transform: translateY(-50%);
+  width: 0; height: 0;
+  border-left: 8px solid var(--pink);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.paths-visual .path-fork {
+  position: relative;
+  width: 200px; height: 80px;
+  flex-shrink: 0;
+}
+.paths-visual .path-fork svg {
+  width: 100%; height: 100%;
+  overflow: visible;
+}
 .cv-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
   margin-bottom: 3rem;
+  position: relative;
 }
+/* connector dots above each card */
 .cv-card {
   background: var(--white);
   border: 1px solid rgba(184,133,122,0.12);
@@ -530,12 +584,46 @@ section { padding: 7rem 2.5rem; }
   position: absolute; top: 0; left: 0; right: 0;
   height: 3px;
   border-radius: 10px 10px 0 0;
-  background: linear-gradient(90deg, var(--orange), var(--terracotta));
+}
+.cv-card:nth-child(1)::before { background: linear-gradient(90deg, var(--orange), var(--terracotta)); }
+.cv-card:nth-child(2)::before { background: linear-gradient(90deg, var(--terracotta), var(--pink)); }
+.cv-card:nth-child(3)::before { background: linear-gradient(90deg, var(--pink), var(--pink-soft)); }
+.cv-card::after {
+  content: '';
+  position: absolute;
+  top: -28px; left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--orange-warm);
+  box-shadow: 0 0 0 3px rgba(232,104,48,0.12);
+}
+.cv-card:nth-child(2)::after { background: var(--terracotta); box-shadow: 0 0 0 3px rgba(154,107,96,0.12); }
+.cv-card:nth-child(3)::after { background: var(--pink); box-shadow: 0 0 0 3px rgba(232,160,176,0.12); }
+/* connector lines from dots to cards */
+.cv-grid::before {
+  content: '';
+  position: absolute;
+  top: -18px; left: calc(50% / 3);
+  right: calc(50% / 3);
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--terracotta), var(--pink));
+  z-index: 0;
 }
 .cv-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(184,133,122,0.12);
 }
+.cv-card .cv-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.cv-card:nth-child(1) .cv-icon { background: rgba(232,104,48,0.08); color: var(--orange); }
+.cv-card:nth-child(2) .cv-icon { background: rgba(154,107,96,0.08); color: var(--terracotta-deep); }
+.cv-card:nth-child(3) .cv-icon { background: rgba(232,160,176,0.1); color: var(--pink); }
 .cv-card h3 {
   font-family: var(--display); font-size: 1.1rem; font-weight: 600;
   color: var(--brown-dark); margin-bottom: 0.5rem;
@@ -553,6 +641,9 @@ section { padding: 7rem 2.5rem; }
 .cv-link:hover { color: var(--terracotta-deep); gap: 0.6rem; }
 @media (max-width: 960px) {
   .cv-grid { grid-template-columns: 1fr; }
+  .cv-grid::before { display: none; }
+  .cv-card::after { display: none; }
+  .paths-visual { display: none; }
 }
 
 /* ========= FOOTER ========= */
@@ -754,8 +845,8 @@ footer {
   <div class="hero-inner">
   <div class="hero-text">
     <span class="hero-tag">Open to Opportunities &middot; Remote / Relocation</span>
-    <h1>I&rsquo;m a doctor who <em>actually explains things</em></h1>
-    <p class="hero-sub">Physician, medical writer, and the person behind a 2,200-subscriber evidence-based health blog. I take complex medical topics and turn them into something you&rsquo;d actually want to read&thinsp;&mdash;&thinsp;without cutting corners on the science.</p>
+    <h1>Physician. Medical Writer. <em>Health Innovator.</em></h1>
+    <p class="hero-sub">I bring clinical thinking, research literacy, and operational experience to health companies building products that matter. I&rsquo;m a physician with training in internal medicine and rehabilitation, a track record in medical education and evidence-based content, and hands-on R&amp;D experience&thinsp;&mdash;&thinsp;including building a working orthosis prototype from scratch.</p>
     <a href="#contact" class="hero-cta">Get in Touch &rarr;</a>
   </div>
   <div class="hero-photos">
@@ -1047,18 +1138,56 @@ footer {
     <p class="section-label reveal">Let&rsquo;s Talk</p>
     <h2 class="section-title reveal">I&rsquo;m looking for <em>my next thing</em></h2>
     <p class="contact-desc reveal reveal-delay-1">Specifically: remote-friendly positions in health R&amp;D, medical writing, health-tech, digital health, or health communication. Open to relocation across the EU, US, or Asia. If what I do sounds relevant to what you&rsquo;re building, I&rsquo;d love to hear about it.</p>
+
+    <!-- Three paths visualization -->
+    <div class="reveal reveal-delay-1" style="position:relative; margin-bottom:3.5rem;">
+      <svg viewBox="0 0 900 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:0 auto;display:block;height:auto;" preserveAspectRatio="xMidYMid meet">
+        <!-- center dot -->
+        <circle cx="450" cy="12" r="6" fill="#E86830"/>
+        <circle cx="450" cy="12" r="10" stroke="#E86830" stroke-opacity="0.2" stroke-width="1.5" fill="none"/>
+        <!-- left branch -->
+        <path d="M450 12 Q450 50, 150 85" stroke="url(#grad1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="150" cy="85" r="5" fill="#E86830"/>
+        <!-- center branch -->
+        <line x1="450" y1="12" x2="450" y2="85" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="450" cy="85" r="5" fill="#9A6B60"/>
+        <!-- right branch -->
+        <path d="M450 12 Q450 50, 750 85" stroke="url(#grad3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="750" cy="85" r="5" fill="#E8A0B0"/>
+        <!-- arrow tips -->
+        <polygon points="146,80 154,80 150,90" fill="#E86830"/>
+        <polygon points="446,80 454,80 450,90" fill="#9A6B60"/>
+        <polygon points="746,80 754,80 750,90" fill="#E8A0B0"/>
+        <!-- gradient defs -->
+        <defs>
+          <linearGradient id="grad1" x1="450" y1="12" x2="150" y2="85" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E86830"/><stop offset="1" stop-color="#E86830"/>
+          </linearGradient>
+          <linearGradient id="grad2" x1="450" y1="12" x2="450" y2="85" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E86830"/><stop offset="1" stop-color="#9A6B60"/>
+          </linearGradient>
+          <linearGradient id="grad3" x1="450" y1="12" x2="750" y2="85" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E86830"/><stop offset="1" stop-color="#E8A0B0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
     <div class="cv-grid stagger-parent reveal">
       <div class="cv-card stagger-child">
+        <div class="cv-icon">&oplus;</div>
         <h3>Health / Wellness R&amp;D</h3>
         <p>Literature review, evidence synthesis, clinical validation, product-science alignment. I&rsquo;ve run independent R&amp;D from scratch&thinsp;&mdash;&thinsp;from sourcing materials internationally to building a working prototype. Ready to bring that discipline to a team that moves fast.</p>
         <a href="https://docs.google.com/document/d/1Ojs6JJoY1gWTtl3eASQj7nQHaFKuq4Ze/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">View CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
+        <div class="cv-icon">&sung;</div>
         <h3>Medical Content / Medical Writing</h3>
         <p>Evidence-based content, patient education, health communication. I run a 2,200-subscriber medical blog with zero ads&thinsp;&mdash;&thinsp;turning clinical research into something people actually want to read is what I do in my free time. Imagine what I&rsquo;d do full-time.</p>
         <a href="https://docs.google.com/document/d/105aohL75spAWHxSO6-6zdniJGJHuq82V/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">View CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
+        <div class="cv-icon">&rtrif;</div>
         <h3>Health-Tech / Product</h3>
         <p>Clinical thinking, research skills, and operational experience for product teams. I&rsquo;ve managed business operations, run R&amp;D independently, and spent years translating between medical professionals and everyone else. Looking for a team that values cross-functional thinking.</p>
         <a href="https://docs.google.com/document/d/103xD5nh_1xH4KDAm_fXHzJBynMd8RTvH/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">View CV &rarr;</a>

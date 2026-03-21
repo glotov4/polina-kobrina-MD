@@ -515,6 +515,7 @@ section { padding: 7rem 2.5rem; }
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
   margin-bottom: 3rem;
+  position: relative;
 }
 .cv-card {
   background: var(--white);
@@ -530,8 +531,10 @@ section { padding: 7rem 2.5rem; }
   position: absolute; top: 0; left: 0; right: 0;
   height: 3px;
   border-radius: 10px 10px 0 0;
-  background: linear-gradient(90deg, var(--orange), var(--terracotta));
 }
+.cv-card:nth-child(1)::before { background: linear-gradient(90deg, var(--orange), var(--terracotta)); }
+.cv-card:nth-child(2)::before { background: linear-gradient(90deg, var(--terracotta), var(--pink)); }
+.cv-card:nth-child(3)::before { background: linear-gradient(90deg, var(--pink), var(--pink-soft)); }
 .cv-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(184,133,122,0.12);
@@ -692,8 +695,8 @@ footer {
   <div class="hero-inner">
   <div class="hero-text">
     <span class="hero-tag">Открыта к предложениям &middot; Удалённо / Релокация</span>
-    <h1>Я&thinsp;&mdash;&thinsp;врач, который <em>реально объясняет</em></h1>
-    <p class="hero-sub">Врач, медицинский автор и человек, который ведёт блог о доказательной медицине на 2&thinsp;200 подписчиков. Я беру сложные медицинские темы и превращаю их в то, что вы действительно захотите прочитать&thinsp;&mdash;&thinsp;без упрощений в ущерб науке.</p>
+    <h1>Врач. Медицинский автор. <em>Инноватор в&nbsp;здоровье.</em></h1>
+    <p class="hero-sub">Я привношу клиническое мышление, исследовательскую грамотность и операционный опыт в компании, создающие продукты для здоровья. Врач с подготовкой по терапии и реабилитации, опытом в медицинском просвещении и доказательном контенте, и практическим R&amp;D-опытом&thinsp;&mdash;&thinsp;включая создание рабочего прототипа ортеза с нуля.</p>
     <a href="#contact" class="hero-cta">Связаться &rarr;</a>
   </div>
   <div class="hero-photos">
@@ -985,18 +988,43 @@ footer {
     <p class="section-label reveal">Давайте поговорим</p>
     <h2 class="section-title reveal">Я ищу <em>своё следующее дело</em></h2>
     <p class="contact-desc reveal reveal-delay-1">А именно: удалённые позиции в сфере R&amp;D здоровья, медицинского писательства, health-tech, цифрового здоровья или медицинской коммуникации. Открыта к релокации в ЕС, США или Азию. Если то, что я делаю, звучит релевантно для того, что вы строите, буду рада узнать об этом.</p>
+    <!-- Three paths visualization -->
+    <div class="reveal reveal-delay-1" style="position:relative; margin-bottom:3.5rem;">
+      <svg viewBox="0 0 900 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:0 auto;display:block;height:auto;" preserveAspectRatio="xMidYMid meet">
+        <circle cx="450" cy="12" r="6" fill="#E86830"/>
+        <circle cx="450" cy="12" r="10" stroke="#E86830" stroke-opacity="0.2" stroke-width="1.5" fill="none"/>
+        <path d="M450 12 Q450 50, 150 85" stroke="url(#g1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="150" cy="85" r="5" fill="#E86830"/>
+        <line x1="450" y1="12" x2="450" y2="85" stroke="url(#g2)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="450" cy="85" r="5" fill="#9A6B60"/>
+        <path d="M450 12 Q450 50, 750 85" stroke="url(#g3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="750" cy="85" r="5" fill="#E8A0B0"/>
+        <polygon points="146,80 154,80 150,90" fill="#E86830"/>
+        <polygon points="446,80 454,80 450,90" fill="#9A6B60"/>
+        <polygon points="746,80 754,80 750,90" fill="#E8A0B0"/>
+        <defs>
+          <linearGradient id="g1" x1="450" y1="12" x2="150" y2="85" gradientUnits="userSpaceOnUse"><stop stop-color="#E86830"/><stop offset="1" stop-color="#E86830"/></linearGradient>
+          <linearGradient id="g2" x1="450" y1="12" x2="450" y2="85" gradientUnits="userSpaceOnUse"><stop stop-color="#E86830"/><stop offset="1" stop-color="#9A6B60"/></linearGradient>
+          <linearGradient id="g3" x1="450" y1="12" x2="750" y2="85" gradientUnits="userSpaceOnUse"><stop stop-color="#E86830"/><stop offset="1" stop-color="#E8A0B0"/></linearGradient>
+        </defs>
+      </svg>
+    </div>
+
     <div class="cv-grid stagger-parent reveal">
       <div class="cv-card stagger-child">
+        <div class="cv-icon" style="width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;background:rgba(232,104,48,0.08);color:#E86830;">&oplus;</div>
         <h3>R&amp;D в сфере здоровья / велнеса</h3>
         <p>Обзор литературы, синтез доказательств, клиническая валидация, связь продукта и науки. Я вела независимые исследования с нуля&thinsp;&mdash;&thinsp;от международной закупки материалов до создания рабочего прототипа. Готова принести эту дисциплину в команду, которая двигается быстро.</p>
         <a href="https://docs.google.com/document/d/1Ojs6JJoY1gWTtl3eASQj7nQHaFKuq4Ze/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">Смотреть CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
+        <div class="cv-icon" style="width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;background:rgba(154,107,96,0.08);color:#9A6B60;">&sung;</div>
         <h3>Медицинский контент / Медицинское писательство</h3>
         <p>Контент на основе доказательной медицины, обучение пациентов, медицинская коммуникация. Я веду медицинский блог на 2&thinsp;200 подписчиков без рекламы&thinsp;&mdash;&thinsp;превращать клинические исследования в то, что люди действительно хотят читать, это то, что я делаю в свободное время. Представьте, что я делала бы на полную ставку.</p>
         <a href="https://docs.google.com/document/d/105aohL75spAWHxSO6-6zdniJGJHuq82V/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">Смотреть CV &rarr;</a>
       </div>
       <div class="cv-card stagger-child">
+        <div class="cv-icon" style="width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;background:rgba(232,160,176,0.1);color:#E8A0B0;">&rtrif;</div>
         <h3>Health-Tech / Продукт</h3>
         <p>Клиническое мышление, исследовательские навыки и операционный опыт для продуктовых команд. Я управляла бизнес-операциями, вела R&amp;D самостоятельно и годами переводила между медицинскими специалистами и всеми остальными. Ищу команду, которая ценит кроссфункциональное мышление.</p>
         <a href="https://docs.google.com/document/d/103xD5nh_1xH4KDAm_fXHzJBynMd8RTvH/edit?usp=sharing&ouid=112105494794656515011&rtpof=true&sd=true" class="cv-link" target="_blank">Смотреть CV &rarr;</a>
