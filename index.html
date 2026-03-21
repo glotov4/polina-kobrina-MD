@@ -588,28 +588,6 @@ section { padding: 7rem 2.5rem; }
 .cv-card:nth-child(1)::before { background: linear-gradient(90deg, var(--orange), var(--terracotta)); }
 .cv-card:nth-child(2)::before { background: linear-gradient(90deg, var(--terracotta), var(--pink)); }
 .cv-card:nth-child(3)::before { background: linear-gradient(90deg, var(--pink), var(--pink-soft)); }
-.cv-card::after {
-  content: '';
-  position: absolute;
-  top: -28px; left: 50%;
-  transform: translateX(-50%);
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--orange-warm);
-  box-shadow: 0 0 0 3px rgba(232,104,48,0.12);
-}
-.cv-card:nth-child(2)::after { background: var(--terracotta); box-shadow: 0 0 0 3px rgba(154,107,96,0.12); }
-.cv-card:nth-child(3)::after { background: var(--pink); box-shadow: 0 0 0 3px rgba(232,160,176,0.12); }
-/* connector lines from dots to cards */
-.cv-grid::before {
-  content: '';
-  position: absolute;
-  top: -18px; left: calc(50% / 3);
-  right: calc(50% / 3);
-  height: 2px;
-  background: linear-gradient(90deg, var(--orange), var(--terracotta), var(--pink));
-  z-index: 0;
-}
 .cv-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(184,133,122,0.12);
@@ -641,9 +619,6 @@ section { padding: 7rem 2.5rem; }
 .cv-link:hover { color: var(--terracotta-deep); gap: 0.6rem; }
 @media (max-width: 960px) {
   .cv-grid { grid-template-columns: 1fr; }
-  .cv-grid::before { display: none; }
-  .cv-card::after { display: none; }
-  .paths-visual { display: none; }
 }
 
 /* ========= FOOTER ========= */
@@ -1111,6 +1086,20 @@ footer {
         <div class="cc-platform">Telegram &middot; Instagram</div>
         <h3>&ldquo;Med-Pop by a Therapist&rdquo;</h3>
         <p>My evidence-based medical blog in Russian. 2,200+ subscribers, zero ads, all organic growth. I write about back pain, vaccination, cholesterol, common nutrition myths, and things the internet told you about food. I also share my own health journey&thinsp;&mdash;&thinsp;including the parts that aren&rsquo;t very glamorous.</p>
+        <!-- Instagram-style preview -->
+        <div style="margin:0.8rem 0 1.2rem; border:1px solid rgba(184,133,122,0.15); border-radius:10px; overflow:hidden; background:var(--bg);">
+          <div style="display:flex; align-items:center; gap:0.6rem; padding:0.7rem 0.8rem;">
+            <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--pink));display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.7rem;font-weight:700;">PK</div>
+            <div>
+              <div style="font-size:0.72rem;font-weight:600;color:var(--brown-dark);">dr_p_kobra</div>
+              <div style="font-size:0.62rem;color:var(--brown-light);">2,200+ subscribers</div>
+            </div>
+          </div>
+          <img src="assets/polina-photos/additional_info_photos/первая помощь.webp" alt="Polina teaching CPR on a training mannequin" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+          <div style="padding:0.6rem 0.8rem;font-size:0.72rem;color:var(--brown-mid);line-height:1.5;">
+            <strong style="color:var(--brown-dark);">dr_p_kobra</strong> Evidence-based medicine, explained by a real doctor who is also a real human&hellip;
+          </div>
+        </div>
         <div class="cc-links">
           <a href="https://t.me/p_kobra_med" target="_blank">Telegram &rarr;</a>
           <a href="https://www.instagram.com/dr_p_kobra/" target="_blank">Instagram &rarr;</a>
@@ -1120,13 +1109,13 @@ footer {
         <div class="cc-platform">Lectures &amp; Workshops</div>
         <h3>Lectures &amp; Workshops</h3>
         <p>I&rsquo;ve lectured on knee pain management, pelvic floor health, and how to actually communicate with patients. 9 sessions delivered to fitness and coaching professionals, bridging clinical evidence and real-world training practice. If you work with people who have bodies (so&hellip; everyone), we should talk.</p>
-        <div class="teaching-video" style="margin-top:1.2rem;">
-          <video autoplay muted loop playsinline>
+        <div style="margin-top:1.2rem; border-radius:10px; overflow:hidden; max-height:300px;">
+          <video autoplay muted loop playsinline style="width:100%;height:300px;object-fit:cover;display:block;border-radius:10px;">
             <source src="assets/polina-photos/additional_info_photos/video.webm" type="video/webm">
             <source src="assets/polina-photos/additional_info_photos/video.mp4" type="video/mp4">
           </video>
-          <p class="teaching-video-caption">Teaching the recovery position&thinsp;&mdash;&thinsp;how to safely position an unconscious person who is still breathing.</p>
         </div>
+        <p style="font-size:0.76rem;color:var(--brown-light);font-style:italic;margin-top:0.5rem;line-height:1.5;">Teaching the recovery position&thinsp;&mdash;&thinsp;safely positioning an unconscious person who is still breathing.</p>
       </div>
     </div>
   </div>
@@ -1138,40 +1127,6 @@ footer {
     <p class="section-label reveal">Let&rsquo;s Talk</p>
     <h2 class="section-title reveal">I&rsquo;m looking for <em>my next thing</em></h2>
     <p class="contact-desc reveal reveal-delay-1">Specifically: remote-friendly positions in health R&amp;D, medical writing, health-tech, digital health, or health communication. Open to relocation across the EU, US, or Asia. If what I do sounds relevant to what you&rsquo;re building, I&rsquo;d love to hear about it.</p>
-
-    <!-- Three paths visualization -->
-    <div class="reveal reveal-delay-1" style="position:relative; margin-bottom:3.5rem;">
-      <svg viewBox="0 0 900 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:0 auto;display:block;height:auto;" preserveAspectRatio="xMidYMid meet">
-        <!-- center dot -->
-        <circle cx="450" cy="12" r="6" fill="#E86830"/>
-        <circle cx="450" cy="12" r="10" stroke="#E86830" stroke-opacity="0.2" stroke-width="1.5" fill="none"/>
-        <!-- left branch -->
-        <path d="M450 12 Q450 50, 150 85" stroke="url(#grad1)" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <circle cx="150" cy="85" r="5" fill="#E86830"/>
-        <!-- center branch -->
-        <line x1="450" y1="12" x2="450" y2="85" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="450" cy="85" r="5" fill="#9A6B60"/>
-        <!-- right branch -->
-        <path d="M450 12 Q450 50, 750 85" stroke="url(#grad3)" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <circle cx="750" cy="85" r="5" fill="#E8A0B0"/>
-        <!-- arrow tips -->
-        <polygon points="146,80 154,80 150,90" fill="#E86830"/>
-        <polygon points="446,80 454,80 450,90" fill="#9A6B60"/>
-        <polygon points="746,80 754,80 750,90" fill="#E8A0B0"/>
-        <!-- gradient defs -->
-        <defs>
-          <linearGradient id="grad1" x1="450" y1="12" x2="150" y2="85" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E86830"/><stop offset="1" stop-color="#E86830"/>
-          </linearGradient>
-          <linearGradient id="grad2" x1="450" y1="12" x2="450" y2="85" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E86830"/><stop offset="1" stop-color="#9A6B60"/>
-          </linearGradient>
-          <linearGradient id="grad3" x1="450" y1="12" x2="750" y2="85" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E86830"/><stop offset="1" stop-color="#E8A0B0"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
 
     <div class="cv-grid stagger-parent reveal">
       <div class="cv-card stagger-child">
